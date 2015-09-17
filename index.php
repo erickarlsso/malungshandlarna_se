@@ -14,6 +14,7 @@
       ?>
       <?php get_template_part('_parts/site', 'footer'); ?>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/_lib/js/vendor/bootstrap.min.js"></script>
 
     <?php wp_footer(); ?>

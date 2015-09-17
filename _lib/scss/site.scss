@@ -14,8 +14,6 @@
 // Layout
 @import 'layout/body';
 @import 'layout/header';
-@import 'layout/header-primary';
-@import 'layout/header-secondary';
 @import 'layout/main';
 @import 'layout/footer';
 @import 'layout/footer-primary';
@@ -23,6 +21,6 @@
 
 // Components
 @import 'components/feature';
-@import 'components/feature-intro';
+@import 'components/feature-video';
 @import 'components/feature-about';
 @import 'components/feature-social';

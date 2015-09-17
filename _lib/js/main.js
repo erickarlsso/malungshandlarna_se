@@ -19,7 +19,7 @@
     'common': {
       init: function() {
 
-        
+
 
       },
       finalize: function() {
@@ -29,6 +29,14 @@
     // Home page
     'home': {
       init: function() {
+
+        $(document).ready(sizeContent);
+        $(window).resize(sizeContent);
+
+        function sizeContent() {
+            var newHeight = $("html").height() - $(".header-wrapper").height() + "px";
+            $(".feature--video").css("height", newHeight);
+        }
 
       },
       finalize: function() {

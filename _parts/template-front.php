@@ -1,65 +1,38 @@
-<section class="feature feature--intro" style="background-image:url(http://www.visitdalarna.se/globalassets/visit-idre/bilder/1500x1125/cykling-i-idre.jpg);">
-  <div class="container">
+<section class="feature feature--video" style="background-image:url(<?php the_field('background'); ?>);">
 
-    <ul class="nav">
+  <?php if( get_field('youtube') ) { ?>
+  <div class="hidden-xs-down video" style="padding-top: 56.25%;">
+    <div id="youtube"></div>
+    <script>
+      if (screen.width > 768) {
+        var tag = document.createElement('script');
 
-      <li class="col-xs-6 col-sm-3 panel--box">
-        <a href="#">
-          <span class="icon--row"><i class="fa fa-bed animated"></i></span>
-          <h3 class="title--row">Bo</h3>
-          <p>längs västerdalälven..</p>
-        </a>
-      </li>
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-      <li class="col-xs-6 col-sm-3 panel--box">
-        <a href="#">
-          <span class="icon--row"><i class="fa fa-bicycle animated"></i></span>
-          <h3 class="title--row">Göra</h3>
-          <p>aktiviteter i massor..</p>
-        </a>
-      </li>
-
-      <li class="col-xs-6 col-sm-3 panel--box">
-        <a href="#">
-          <span class="icon--row"><i class="fa fa-gift animated"></i></span>
-          <h3 class="title--row">Paket</h3>
-          <p>färdiga lösningar..</p>
-        </a>
-      </li>
-
-      <li class="col-xs-6 col-sm-3 panel--box">
-        <a href="#">
-          <span class="icon--row"><i class="fa fa-info animated"></i></span>
-          <h3 class="title--row">Kontakt</h3>
-          <p>ta en snackis..</p>
-        </a>
-      </li>
-
-    </ul>
-
+        var player;
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player('youtube', {
+            height: '720',
+            width: '1280',
+            videoId: '<?php the_field('youtube'); ?>',
+            playerVars: { 'loop': 1, 'controls': 0, 'showinfo': 0, 'rel': 0, 'playlist': '<?php the_field('youtube'); ?>'},
+            events: {
+              'onReady': onPlayerReady
+            }
+          });
+        }
+        function onPlayerReady(event) {
+          event.target.setVolume(0);
+          event.target.playVideo();
+        }
+      }
+    </script>
+    <div class="overlay"></div>
   </div>
-</section>
+  <?php } ?>
 
-<section class="feature feature--about">
-  <div class="container">
+  <h1>Landsbygdsshoppning<br>när den är som bäst</h1>
 
-    <article class="col-xs-12 col-sm-7 content--box">
-      <h1>Välkummin jåt</h1>
-
-      <?php
-      while ( have_posts() ) : the_post();
-
-        the_content();
-
-      endwhile;
-      ?>
-    </article>
-
-  </div>
-</section>
-
-<section class="feature feature--social">
-  <div class="container-fluid">
-
-  </div>
 </section>
