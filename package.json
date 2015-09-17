@@ -1,0 +1,17 @@
+{
+  "name": "malungshandlarna",
+  "version": "2.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erickarlsso/malungshandlarna_se-final.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-browser-sync": "^2.1.3",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-sass": "~0.18.0",
+    "node-sass": "~2.0.1"
+  }
+}

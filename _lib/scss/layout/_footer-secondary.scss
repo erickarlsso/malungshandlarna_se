@@ -1,0 +1,6 @@
+.footer--secondary {
+  @include clearfix;
+  position: relative;
+  padding: 2em 0;
+  background-color: $color-1;
+}

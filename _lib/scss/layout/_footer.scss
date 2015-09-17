@@ -1,0 +1,35 @@
+.footer-wrapper {
+  position: relative;
+
+  h5 {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  p {
+    text-align: center;
+    font-size: 80%;
+    color: #fff;
+  }
+
+  .nav {
+    text-transform: uppercase;
+
+    li {
+      padding: 0 .5em;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0;
+      color: rgba(#fff, .75);
+
+      &:focus,
+      &:hover {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.feature--about {
+  background-color: $color-2;
+
+  .content--box {
+    text-align: center;
+    color: #fff;
+
+    @include media-breakpoint-up(sm) {
+      text-align: right;
+      border-right: .25em dotted #fff;
+    }
+
+    h1 {
+      font-weight: 700;
+    }
+
+  }
+}
