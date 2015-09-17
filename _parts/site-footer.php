@@ -3,6 +3,10 @@
   <section class="footer--secondary">
     <div class="container">
 
+      <article class="col-xs-12 col-sm-offset-4 col-sm-4">
+        <div class="fb-like" data-href="https://facebook.com/malungshandlarna" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+      </article>
+
     </div>
   </section>
 
@@ -22,12 +26,39 @@
         ?>
       </article>
 
-      <figure class="col-xs-12 col-sm-3">
-        <a href="<?php esc_url(home_url('/')); ?>">
-          <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/_lib/img/huvudlogga-vit_sv.png">
+      <article class="col-xs-12 col-sm-3">
+        <?php
+        if (has_nav_menu('footer_partners')) :
+          echo '<h5>Partners</h5>';
+          wp_nav_menu([
+            'theme_location'  => 'footer_partners',
+            'container'       => 'false',
+            'menu_class'      => 'nav'
+          ]);
+        endif;
+        ?>
+      </article>
+
+      <article class="col-xs-12 col-sm-3">
+        <?php
+        if (has_nav_menu('footer_other')) :
+          echo '<h5>Partners</h5>';
+          wp_nav_menu([
+            'theme_location'  => 'footer_other',
+            'container'       => 'false',
+            'menu_class'      => 'nav'
+          ]);
+        endif;
+        ?>
+      </article>
+
+      <article class="col-xs-12 col-sm-3">
+
+        <a href="http://visitmalungsalen.com" target="_blank">
+          <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/_lib/img/visitmalungsalen_logo.png">
         </a>
-        <p>&copy; <?php echo bloginfo('name'); ?> <?php echo date('Y'); ?></p>
-      </figure>
+
+      </article>
 
 
     </div>

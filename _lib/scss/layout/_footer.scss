@@ -1,5 +1,31 @@
 .footer-wrapper {
   position: relative;
+  text-align: center;
+  background-color: $color-1-dark;
+
+  @include media-breakpoint-up(sm) {
+    text-align: left;
+  }
+
+  .footer--secondary,
+  .footer--primary {
+    @include clearfix;
+    position: relative;
+    padding: 1em 0;
+
+    @include media-breakpoint-up(sm) {
+      padding: 2em 0 2em;
+    }
+  }
+
+  .footer--primary {
+    background-color: #333;
+
+    img {
+      transform: translateY(75%);
+    }
+  }
+
 
   h5 {
     text-transform: uppercase;

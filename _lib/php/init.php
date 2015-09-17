@@ -7,7 +7,7 @@ if ( ! isset( $content_width ) ) {
 if ( ! function_exists( 'theme_setup' ) ) :
 
   function theme_setup() {
-  	load_theme_textdomain( 'malungscamping', get_template_directory() . '/languages' );
+  	load_theme_textdomain( 'malungshandlarna', get_template_directory() . '/languages' );
 
   	add_theme_support( 'automatic-feed-links' );
   	add_theme_support( 'title-tag' );
@@ -18,10 +18,9 @@ if ( ! function_exists( 'theme_setup' ) ) :
     set_post_thumbnail_size( 825, 510, true );
 
   	register_nav_menus( array(
-  		'header_primary'   => __( 'Huvudmeny',   'malungscamping' ),
-  		'header_secondary' => __( 'Minimeny', 'malungscamping' ),
-			'footer_rules' => __( 'Regler & Villkor', 'malungscamping' ),
-			'footer_partners' => __( 'Partners', 'malungscamping' ),
+  		'header_primary'   => __( 'Huvudmeny',   'malungshandlarna' ),
+			'footer_partners' => __( 'Partners', 'malungshandlarna' ),
+			'footer_other' => __( 'Övrigt', 'malungshandlarna' )
   	) );
 
   }
