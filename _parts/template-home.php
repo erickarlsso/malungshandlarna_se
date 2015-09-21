@@ -1,3 +1,11 @@
+<?php
+/**
+ * Template Name: Startsida
+ */
+?>
+
+<?php get_header(); ?>
+
 <section class="feature feature--video" style="background-image:url(<?php the_field('background'); ?>);">
 
   <?php if( get_field('youtube') ) { ?>
@@ -36,3 +44,27 @@
   <h1>Landsbygdsshoppning<br>när den är som bäst</h1>
 
 </section>
+
+<section class="feature feature--about">
+  <div class="container">
+
+    <article class="col-xs-12 col-sm-offset-1 col-sm-5 content--box">
+      <h2>Välkummin jåt</h2>
+      <?php
+      while ( have_posts() ) : the_post();
+
+        the_content();
+
+      endwhile;
+      ?>
+    </article>
+
+    <article class="col-xs-12 col-sm-5 news--box">
+      <h2>Senaste nytt</h2>
+
+    </article>
+
+  </div>
+</section>
+
+<?php get_footer(); ?>

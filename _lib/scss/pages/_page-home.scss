@@ -1,3 +1,11 @@
+.feature {
+  position: relative;
+  padding: 4em 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
 .feature--video {
   max-height: 640px;
   overflow: hidden;
@@ -54,4 +62,32 @@
     }
   }
 
+}
+
+
+.feature--about {
+  background-color: $color-1;
+  color: #fff;
+
+  h2 {
+    font-weight: 700;
+  }
+
+  .content--box {
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      text-align: right;
+      border-right: .25em dotted #fff;
+    }
+
+  }
+
+  .news--box {
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      text-align: left;
+    }
+  }
 }

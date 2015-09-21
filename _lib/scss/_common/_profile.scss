@@ -1,22 +1,22 @@
-$color-1:                   #C9CE1B;
+$color-1:                   #BCC119;
 $color-1-dark:              mix(black, $color-1, 20);
 $color-1-darker:            mix(black, $color-1, 50);
 $color-1-light:             mix(white, $color-1, 50);
 $color-1-lighter:           mix(white, $color-1, 70);
 
-$color-2:                   #DB7901;
+$color-2:                   #D0DD2B;
 $color-2-dark:              mix(black, $color-2, 20);
 $color-2-darker:            mix(black, $color-2, 50);
 $color-2-light:             mix(white, $color-2, 50);
 $color-2-lighter:           mix(white, $color-2, 70);
 
-$color-3:                   #CAD410;
+$color-3:                   #67CDDC;
 $color-3-dark:              mix(black, $color-3, 20);
 $color-3-darker:            mix(black, $color-3, 50);
 $color-3-light:             mix(white, $color-3, 50);
 $color-3-lighter:           mix(white, $color-3, 70);
 
-$color-4:                   #9AC331;
+$color-4:                   #00A9E0;
 $color-4-dark:              mix(black, $color-4, 20);
 $color-4-darker:            mix(black, $color-4, 50);
 $color-4-light:             mix(white, $color-4, 50);
@@ -24,7 +24,7 @@ $color-4-lighter:           mix(white, $color-4, 70);
 
 $brand-primary: $color-1;
 
-$body-bg:                   mix($color-1-lighter, #fff, 20);
-$body-color:                #404040;
+$body-bg:                   mix($color-1-lighter, #fff, 50);
+$body-color:                #3B3B3D;
 
 $font-family-base:          'Open Sans', sans-serif;

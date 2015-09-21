@@ -14,7 +14,7 @@
 
   // Use this variable to set up the common and page specific functions. If you
   // rename this variable, you will also need to rename the namespace below.
-  var Sage = {
+  var malungshandlarna = {
     // All pages
     'common': {
       init: function() {
@@ -43,10 +43,120 @@
         // JavaScript to be fired on the home page, after the init JS
       }
     },
-
-    // About page
-    'about': {
+    // Shops page
+    'page_template_template_shops': {
       init: function() {
+
+        if (matchMedia) {
+        	var mq = window.matchMedia("(min-width: 640px)");
+        	mq.addListener(WidthChange);
+        	WidthChange(mq);
+        }
+
+        function WidthChange(mq) {
+
+        	if (mq.matches) {
+
+            $('#filter').collapse({
+              toggle: true
+            })
+
+        	}
+
+        }
+
+      },
+      finalize: function() {
+        // JavaScript to be fired on the home page, after the init JS
+      }
+    },
+    // Shop page
+    'single_medlemmar': {
+      init: function() {
+
+        (function($) {
+
+          function render_map( $el ) {
+
+            var $markers = $el.find('.marker');
+            var args = {
+              scrollwheel: false,
+              zoom		: 16,
+              center		: new google.maps.LatLng(0, 0),
+              mapTypeId	: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map( $el[0], args);
+
+            map.markers = [];
+
+            $markers.each(function(){
+
+                add_marker( $(this), map );
+
+            });
+
+            center_map( map );
+
+        }
+
+          function add_marker( $marker, map ) {
+
+            var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
+            var marker = new google.maps.Marker({
+              position	: latlng,
+              map			: map
+            });
+
+            map.markers.push( marker );
+
+            if( $marker.html() ) {
+
+              var infowindow = new google.maps.InfoWindow({
+                content		: $marker.html()
+              });
+
+              google.maps.event.addListener(marker, 'click', function() {
+
+                infowindow.open( map, marker );
+
+              });
+            }
+
+          }
+
+          function center_map( map ) {
+
+            var bounds = new google.maps.LatLngBounds();
+
+            $.each( map.markers, function( i, marker ){
+
+              var latlng = new google.maps.LatLng( marker.position.lat(), marker.position.lng() );
+
+              bounds.extend( latlng );
+
+            });
+
+            if( map.markers.length == 1 ) {
+                map.setCenter( bounds.getCenter() );
+                map.setZoom( 16 );
+            }
+            else {
+              map.fitBounds( bounds );
+            }
+
+          }
+
+          $(document).ready(function(){
+
+            $('.map').each(function(){
+
+              render_map( $(this) );
+
+            });
+
+          });
+
+        })(jQuery);
 
       },
       finalize: function() {
@@ -61,7 +171,7 @@
   var UTIL = {
     fire: function(func, funcname, args) {
       var fire;
-      var namespace = Sage;
+      var namespace = malungshandlarna;
       funcname = (funcname === undefined) ? 'init' : funcname;
       fire = func !== '';
       fire = fire && namespace[func];

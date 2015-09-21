@@ -6,7 +6,15 @@
 
       while ( have_posts() ) : the_post();
 
-				get_template_part( '_parts/content', get_post_format() );
+        if ( is_singular('medlemmar') ) :
+
+				      get_template_part( '_parts/template', 'shop' );
+
+        else :
+
+              get_template_part( '_parts/content', get_post_type );
+
+        endif;
 
 			endwhile;
 

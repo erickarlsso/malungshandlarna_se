@@ -17,8 +17,13 @@
 @import 'layout/main';
 @import 'layout/footer';
 
+
 // Components
-@import 'components/feature';
-@import 'components/feature-video';
-@import 'components/feature-about';
-@import 'components/feature-social';
+@import 'components/tabs';
+@import 'components/widget';
+
+
+// Pages
+@import 'pages/page-home';
+@import 'pages/page-shop';
+@import 'pages/page-shops';
