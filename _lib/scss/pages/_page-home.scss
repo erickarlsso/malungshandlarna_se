@@ -4,6 +4,16 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+
+  .overlay {
+    background: #000000;
+    height: 100%;
+    left: 0;
+    opacity: .2;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
 
 .feature--video {
@@ -34,16 +44,6 @@
       width: 100%;
       height: 100%;
     }
-  }
-
-  .overlay {
-    background: #000000;
-    height: 100%;
-    left: 0;
-    opacity: .2;
-    position: absolute;
-    top: 0;
-    width: 100%;
   }
 
   h1 {

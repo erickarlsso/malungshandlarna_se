@@ -19,8 +19,6 @@
     'common': {
       init: function() {
 
-
-
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

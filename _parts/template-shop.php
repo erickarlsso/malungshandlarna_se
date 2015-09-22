@@ -1,19 +1,49 @@
 <main class="main-wrapper">
   <div class="container main--content">
 
-    <article class="col-xs-12 col-sm-12 content--box">
-
       <div class="row">
 
-        <?php the_title('<h1>', '</h1>'); ?>
+        <figure class="col-xs-12 col-sm-12 store--cover">
+          <?php the_post_thumbnail( 'storecover' ); ?>
+          <?php the_title('<h1>', '</h1>'); ?>
+        </figure>
 
       </div>
 
       <div class="row">
 
-        <figure class="col-xs-12 col-sm-6">
-          <?php the_post_thumbnail( 'storecover' ); ?>
-        </figure>
+        <article class="col-xs-12 col-sm-12">
+
+
+
+            <ul class="nav">
+              <li>
+                <a href="mailto:<?php the_field('e-mail'); ?>">
+                  <i class="fa fa-envelope"> </i>
+                  <?php the_field('e-mail'); ?>
+                </a>
+              </li>
+              <li>
+                <a href="tel:<?php the_field('phone'); ?>">
+                  <i class="fa fa-phone"> </i>
+                  <?php the_field('e-mail'); ?>
+                </a>
+              </li>
+              <li>
+                <a href="javscript:void">
+                  <i class="fa fa-map-marker"> </i>
+                  <?php the_field('address'); ?>
+                </a>
+              </li>
+            </ul>
+
+        </article>
+
+      </div>
+
+    <article class="col-xs-12 col-sm-12 content--box">
+
+      <div class="row">
 
         <figure class="col-xs-12 col-sm-6">
           <?php

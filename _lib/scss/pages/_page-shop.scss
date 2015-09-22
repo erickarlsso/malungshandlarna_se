@@ -1,24 +1,46 @@
-.single-medlemmar .main-wrapper
-.main--content {
-  padding-top: 0;
+.single-medlemmar .main--content {
+  background-color: #fff;
 
-  .content--box {
-    padding-top: 0;
-  }
-
-  h1 {
-    margin: 0;
-    color: #fff;
-    line-height: 5rem;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.5rem;
-    background-color: $color-1-dark;
+  .store--cover {
 
     @include media-breakpoint-up(lg) {
-      font-size: 2.5rem;
+      max-height: em(400px);
+      overflow: hidden;
     }
   }
+
+  .store--cover img {
+
+
+    @include media-breakpoint-up(lg) {
+      transform: translateY(-25%);
+    }
+  }
+
+  .store--cover h1 {
+    text-align: center;
+    font-weight: 700;
+  }
+
+    .nav {
+      position: absolute;
+      left: 50%;
+      top: 75%;
+      transform: translateX(-50%);
+    }
+
+    .nav > li {
+      display: inline-block;
+      padding: 1rem 1rem;
+    }
+
+    .nav > li > a {
+      color: $color-1-darker;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 1.25rem;
+      }
+    }
 
   .content--box .nav > li {
     padding-left: .5rem;
