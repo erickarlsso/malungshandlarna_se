@@ -1,56 +1,29 @@
-.footer-wrapper {
+.footer--wrapper {
   position: relative;
-  text-align: center;
-  background-color: $color-1-dark;
-
-  @include media-breakpoint-up(sm) {
-    text-align: left;
-  }
-
-  .footer--secondary,
-  .footer--primary {
-    @include clearfix;
-    position: relative;
-    padding: 1em 0;
-
-    @include media-breakpoint-up(sm) {
-      padding: 2em 0 2em;
-    }
-  }
-
-  .footer--primary {
-    background-color: #333;
-
-    img {
-      transform: translateY(75%);
-    }
-  }
-
+  padding: 3em 0;
+  background-color: $color-1-darker;
 
   h5 {
-    text-transform: uppercase;
-    font-weight: 700;
     color: #fff;
   }
 
-  .nav {
-    text-transform: uppercase;
+  ul > li {
+    padding: 1em 0;
 
-    li {
-      padding: 0 .5em;
-    }
-
-    a {
-      display: inline-block;
-      padding: 0;
-      color: rgba(#fff, .75);
-
-      &:focus,
-      &:hover {
-        text-decoration: none;
-        color: #fff;
-      }
+    @include portable {
+      padding: 0 0 .5em .5em;
     }
   }
+
+  ul > li > a {
+    color: rgba(#fff, .9);
+
+    &:focus,
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
 
 }

@@ -1,98 +1,79 @@
-<main class="main-wrapper">
+<main class="main--wrapper">
   <div class="container main--content">
 
-      <div class="row">
+      <div class="group">
 
-        <figure class="col-xs-12 col-sm-12 store--cover">
+        <figure class="col--palm--12 col--portable--12 store--cover">
           <?php the_post_thumbnail( 'storecover' ); ?>
-          <?php the_title('<h1>', '</h1>'); ?>
         </figure>
 
       </div>
 
-      <div class="row">
+      <div class="group">
 
-        <article class="col-xs-12 col-sm-12">
-
-
-
-            <ul class="nav">
-              <li>
-                <a href="mailto:<?php the_field('e-mail'); ?>">
-                  <i class="fa fa-envelope"> </i>
-                  <?php the_field('e-mail'); ?>
-                </a>
-              </li>
-              <li>
-                <a href="tel:<?php the_field('phone'); ?>">
-                  <i class="fa fa-phone"> </i>
-                  <?php the_field('e-mail'); ?>
-                </a>
-              </li>
-              <li>
-                <a href="javscript:void">
-                  <i class="fa fa-map-marker"> </i>
-                  <?php the_field('address'); ?>
-                </a>
-              </li>
-            </ul>
-
+        <article class="col--palm--12 col--portable--12 store--info">
+          <?php the_title('<h1>', '</h1>'); ?>
+          <ul class="nav">
+            <li class="col--palm-12 col--portable--3">
+              <h5>
+                <i class="fa fa-external-link"> </i>
+                Hemsida
+              </h5>
+              <p>
+                <a href="tel:<?php the_field('website'); ?>" target="_blank"><?php the_field('website'); ?></a>
+              </p>
+            </li>
+            <li class="col--palm-12 col--portable--3">
+              <h5>
+                <i class="fa fa-map-marker"> </i>
+                Besöksadress
+              </h5>
+              <p>
+                <a href="#"><?php the_field('address'); ?></a>
+              </p>
+            </li>
+            <li class="col--palm-12 col--portable--3">
+              <h5>
+                <i class="fa fa-envelope"> </i>
+                E-post
+              </h5>
+              <p>
+                <a href="mailto:<?php the_field('e-mail'); ?>"><?php the_field('e-mail'); ?></a>
+              </p>
+            </li>
+            <li class="col--palm-12 col--portable--3">
+              <h5>
+                <i class="fa fa-phone"> </i>
+                Telefon
+              </h5>
+              <p>
+                <a href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></a>
+              </p>
+            </li>
+          </ul>
         </article>
 
       </div>
 
-    <article class="col-xs-12 col-sm-12 content--box">
+      <div class="group">
 
-      <div class="row">
+        <aside class="col--palm--12 col--portable--4 store--widgets">
 
-        <figure class="col-xs-12 col-sm-6">
-          <?php
-    				$location = get_field('map');
-    				if( !empty($location) ):
-    					echo '<div class="map" style="height:300px;">';
-    						echo '<div class="marker" data-lat="' . $location['lat'] . '" data-lng="' . $location['lng'] . '"></div>';
-    					echo '</div>';
-    				endif;
-    			?>
-        </figure>
+          <figure class="google--map">
+            <?php
+      				$location = get_field('map');
+      				if( !empty($location) ):
+      					echo '<div class="map" style="height:300px;">';
+      						echo '<div class="marker" data-lat="' . $location['lat'] . '" data-lng="' . $location['lng'] . '"></div>';
+      					echo '</div>';
+      				endif;
+      			?>
+          </figure>
 
-      </div>
+        </aside>
 
-      <div class="row">
-
-        <figure class="col-xs-12 col-sm-6">
-
-          <div>
-            <span class="lead">Kontaktuppgifter</span>
-            <ul class="nav">
-              <li>
-                <a href="mailto:<?php the_field('e-mail'); ?>">
-                  <i class="fa fa-envelope"> </i>
-                  <?php the_field('e-mail'); ?>
-                </a>
-              </li>
-              <li>
-                <a href="tel:<?php the_field('phone'); ?>">
-                  <i class="fa fa-phone"> </i>
-                  <?php the_field('e-mail'); ?>
-                </a>
-              </li>
-              <li>
-                <a href="javscript:void">
-                  <i class="fa fa-map-marker"> </i>
-                  <?php the_field('address'); ?>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-        </figure>
-
-      </div>
-
-      <div class="row">
-
-        <article class="col-xs-12 col-sm-12">
+        <article class="col--palm--12 col--portable--8">
+          <h5>Om butiken</h5>
           <?php the_content(); ?>
         </article>
 

@@ -1,9 +1,11 @@
-.header-wrapper {
-  padding: 0;
+.header--wrapper {
+  @include clearfix;
+  position: relative;
   height: 3em;
+  z-index: 999;
   background-color: $color-1;
 
-  @include media-breakpoint-up(sm) {
+  @include portable {
     height: 6em;
   }
 
@@ -15,50 +17,63 @@
   .navbar--brand {
     position: absolute;
     top: 50%;
+    left: 0;
+    margin-left: 1em;
     transform: translateY(-50%);
 
     img {
       display: block;
-      height: 1.75em;
+      height: 2.5em;
       width: auto;
-
-      @include media-breakpoint-up(sm) {
-        height: 4em;
-      }
     }
   }
 
-  .nav {
+  .navbar--main {
+    @include clearfix;
+    display: none;
     position: absolute;
-    top: 50%;
+    top: 0;
     right: 0;
-    margin: 0;
     line-height: 6em;
-    text-align: left;
     text-transform: uppercase;
-    transform: translateY(-50%);
 
-    li {
-      display: inline-block;
-      padding: 0 1em;
+    @include portable {
+      display: block;
     }
 
     a {
-      display: inline-block;
-      padding: 0;
+      position: relative;
+      display: block;
+      margin-right: .5em;
       color: #fff;
-
-      &:focus,
-      &:hover {
-        text-decoration: none;
-        color: $color-1-darker;
-      }
     }
 
-    li.current-menu-item > a {
-      text-decoration: none;
-      color: $color-1-darker;
+    li.current_page_item > a,
+    li.current_page_parent > a,
+    li > a:focus,
+    li > a:hover {
+      color: $color-1-dark;
     }
   }
 
+  .navbar--toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    color: #fff;
+    margin-right: 1em;
+    transform: translateY(-50%);
+
+    @include portable {
+      display: none;
+    }
+
+    &:active {
+      color: $color-1-dark;
+    }
+
+    i {
+      font-size: 2em;
+    }
+  }
 }

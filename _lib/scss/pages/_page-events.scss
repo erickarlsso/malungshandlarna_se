@@ -1,0 +1,48 @@
+.page-template-template-events
+.main--content {
+
+  .timeline {
+    position: relative;
+    float: left;
+    padding-bottom: 10rem;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+
+    &:after {
+      @include media-breakpoint-up(lg) {
+        position: absolute;
+        content: " ";
+        left: 50%;
+        top: 0;
+        width: 1%;
+        height: 100%;
+        border-right: .25rem dotted $color-1;
+      }
+    }
+
+    li {
+      background-color: $color-1-dark;
+      margin-bottom: 10rem;
+    }
+
+    li:nth-child(2) {
+      float: right;
+      transform: translateY(100%);
+    }
+  }
+
+  .timeline--panel {
+
+  }
+
+  .timeline--header h2 {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .timeline--header span {
+    font-size: 90%;
+    color: $color-1-darker;
+  }
+
+}

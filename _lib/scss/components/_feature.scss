@@ -1,0 +1,10 @@
+.feature {
+  position: relative;
+  padding: 3em 0;
+  background-color: #fff;
+  text-align: center;
+
+  @include portable {
+    text-align: left;
+  }
+}

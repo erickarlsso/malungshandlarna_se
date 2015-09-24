@@ -1,0 +1,41 @@
+
+// Main Colors
+$color-1:                    #BCC119;
+$color-1-dark:               darken($color-1, 15%);
+$color-1-darker:             darken($color-1, 30%);
+$color-1-light:              lighten($color-1, 15%);
+$color-1-lighter:            lighten($color-1, 30%);
+
+$color-2:                    #FC7F23;
+$color-2-dark:               darken($color-2, 15%);
+$color-2-darker:             darken($color-2, 30%);
+$color-2-light:              lighten($color-2, 15%);
+$color-2-lighter:            lighten($color-2, 30%);
+
+$color-3:                    #D0DD2B;
+$color-3-dark:               darken($color-3, 15%);
+$color-3-darker:             darken($color-3, 30%);
+$color-3-light:              lighten($color-3, 15%);
+$color-3-lighter:            lighten($color-3, 30%);
+
+$color-4:                    #00A9E0;
+$color-4-dark:               darken($color-4, 15%);
+$color-4-darker:             darken($color-4, 30%);
+$color-4-light:              lighten($color-4, 15%);
+$color-4-lighter:            lighten($color-4, 30%);
+
+$white:                      #fff;
+$black:                      #000;
+
+$gray:                       #333;
+$gray-dark:                  darken($gray, 15%);
+$gray-darker:                darken($gray, 30%);
+$gray-light:                 lighten($gray, 15%);
+$gray-lighter:               lighten($gray, 30%);
+
+// Background Colors
+$base-background-color:      lighten($color-1, 50%);
+
+// Text & Border Colors
+$base-text-color:            $gray-light;
+$base-border-color:          $gray-light;

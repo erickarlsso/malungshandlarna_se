@@ -1,29 +1,47 @@
 
-// Common
-@import '_common/global';
-@import '_common/profile';
+$em-base:  16px;
+
+// Mixins
+@import '_mixins/px-converter';
+@import '_mixins/media-queries';
+@import '_mixins/modular-scale';
+@import '_mixins/clearfix';
+@import '_mixins/grids';
 
 
 // Vendors
-@import '_vendors/bourbon/bourbon';
-@import '_vendors/animate/animate';
-@import '_vendors/bootstrap/bootstrap';
 @import '_vendors/font-awesome/font-awesome';
 
 
+// Settings
+@import '_settings/colors';
+@import '_settings/config';
+
+
+// Base
+@import 'base/reset';
+@import 'base/html';
+@import 'base/body';
+@import 'base/grid';
+@import 'base/type';
+@import 'base/media';
+@import 'base/buttons';
+@import 'base/forms';
+@import 'base/lists';
+@import 'base/tables';
+
+
+// Components
+@import 'components/feature';
+
+
 // Layout
-@import 'layout/body';
+@import 'layout/nav';
 @import 'layout/header';
 @import 'layout/main';
 @import 'layout/footer';
 
 
-// Components
-@import 'components/tabs';
-@import 'components/widget';
-
-
 // Pages
 @import 'pages/page-home';
 @import 'pages/page-shop';
-@import 'pages/page-shops';

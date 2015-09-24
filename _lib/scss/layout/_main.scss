@@ -1,19 +1,11 @@
-.main-wrapper {
+.main--wrapper {
+  position: relative;
   min-height: 100%;
-  padding: 0;
-
-  @include media-breakpoint-up(sm) {
-    padding: 2rem 0 3rem;
-  }
+  margin-top: 2em;
 
   .main--content {
-    padding-top: .9375rem;
-    padding-bottom: 2rem;
-
-    .content--box {
-      background-color: #fff;
-      padding-top: 2rem;
-    }
+    padding-top: 1em;
+    padding-bottom: 2em;
+    background-color: #fff;
   }
-
 }

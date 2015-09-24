@@ -6,65 +6,49 @@
 
 <?php get_header(); ?>
 
-<section class="feature feature--video" style="background-image:url(<?php the_field('background'); ?>);">
+<main class="main--wrapper">
 
-  <?php if( get_field('youtube') ) { ?>
-  <div class="hidden-xs-down video" style="padding-top: 56.25%;">
-    <div id="youtube"></div>
-    <script>
-      if (screen.width > 768) {
-        var tag = document.createElement('script');
+  <section class="group feature feature--blank">
+    <div class="container--full">
 
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      <article class="col--palm--12 col--portable--offset--1 col--portable--5">
+        <h1>
+          Landsbygdsshopping<br>
+          När den är som bäst
+        </h1>
+        <p>
+          Letar Du efter nån? <a href="<?php esc_url(home_url('/')); ?>handlare">Hitta handlare <i class="fa fa-arrow-circle-o-right"> </i></a>
+        </p>
+      </article>
 
-        var player;
-        function onYouTubeIframeAPIReady() {
-          player = new YT.Player('youtube', {
-            height: '720',
-            width: '1280',
-            videoId: '<?php the_field('youtube'); ?>',
-            playerVars: { 'loop': 1, 'controls': 0, 'showinfo': 0, 'rel': 0, 'playlist': '<?php the_field('youtube'); ?>'},
-            events: {
-              'onReady': onPlayerReady
-            }
-          });
-        }
-        function onPlayerReady(event) {
-          event.target.setVolume(0);
-          event.target.playVideo();
-        }
-      }
-    </script>
-    <div class="overlay"></div>
-  </div>
-  <?php } ?>
+      <figure class="col-xs-12 col-sm-3">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/_lib/img/mh-malkom.png">
+      </figure>
 
-  <h1>Landsbygdsshoppning<br>när den är som bäst</h1>
+    </div>
+  </section>
 
-</section>
+  <section class="group feature feature--about">
+    <div class="container">
 
-<section class="feature feature--about">
-  <div class="container">
+      <article class="col--palm--12 col--portable--offset--1 col--portable--5 content--box">
+        <h2>Välkummin jåt</h2>
+        <?php
+        while ( have_posts() ) : the_post();
 
-    <article class="col-xs-12 col-sm-offset-1 col-sm-5 content--box">
-      <h2>Välkummin jåt</h2>
-      <?php
-      while ( have_posts() ) : the_post();
+          the_content();
 
-        the_content();
+        endwhile;
+        ?>
+      </article>
 
-      endwhile;
-      ?>
-    </article>
+      <article class="col-xs-12 col-sm-5 news--box">
 
-    <article class="col-xs-12 col-sm-5 news--box">
-      <h2>Senaste nytt</h2>
+      </article>
 
-    </article>
+    </div>
+  </section>
 
-  </div>
-</section>
+</main>
 
 <?php get_footer(); ?>

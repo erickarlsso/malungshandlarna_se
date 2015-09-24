@@ -1,0 +1,23 @@
+@mixin palm {
+  @media (max-width: #{$screen-palm}) {
+    @content;
+  }
+}
+
+@mixin portable {
+  @media (min-width: #{$screen-portable}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$screen-laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$screen-desktop}) {
+    @content;
+  }
+}
