@@ -19,6 +19,22 @@
     'common': {
       init: function() {
 
+
+        // expander-function
+        $expanderToggle = $('.expander--toggle');
+        $expanderContent = $('.expander--content');
+
+        $expanderToggle.click(function(){
+          $('.expander').toggleClass("expander--open");
+        });
+
+        // navbar--toggle
+        $navToggle = $('.navbar--toggle');
+        $navToggle.click(function() {
+          $('body').toggleClass('nav--open');
+          return false;
+        });
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

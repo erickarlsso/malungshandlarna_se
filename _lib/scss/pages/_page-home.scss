@@ -11,14 +11,29 @@
   }
 
   .feature--blank {
+    padding: 0 0 2em;
     background-color: $color-1;
+
+    @include portable {
+      padding: 4em 0;
+    }
+
+    .image--border {
+      margin: 0;
+      border: .25em solid #fff;
+      border-radius: $base-border-radius;
+
+      @include portable {
+        margin-top: 1em;
+      }
+    }
 
     h1 {
       color: #fff;
       font-size: 1.5rem;
 
       @include portable {
-        margin-top: 5em;
+        margin-top: .5em;
         font-size: 2.5rem;
       }
     }

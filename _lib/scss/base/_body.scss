@@ -1,8 +1,13 @@
 body {
   position: relative;
+  padding-top: $header-height;
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
   background-color: $base-background-color;
   color: $gray;
+
+  @include portable {
+    padding-top: 0;
+  }
 }

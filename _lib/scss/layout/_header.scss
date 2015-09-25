@@ -1,12 +1,16 @@
 .header--wrapper {
   @include clearfix;
-  position: relative;
-  height: 3em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height;
   z-index: 999;
   background-color: $color-1;
 
   @include portable {
-    height: 6em;
+    position: relative;
+    height: $header-height * 1.5;
   }
 
   .container {
@@ -25,6 +29,10 @@
       display: block;
       height: 2.5em;
       width: auto;
+
+      @include portable {
+        height: 4em;
+      }
     }
   }
 
@@ -34,7 +42,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    line-height: 6em;
+    line-height: $header-height * 1.5;
     text-transform: uppercase;
 
     @include portable {
@@ -62,6 +70,7 @@
     top: 50%;
     color: #fff;
     margin-right: 1em;
+    user-select: none;
     transform: translateY(-50%);
 
     @include portable {

@@ -1,0 +1,33 @@
+.expander {
+
+  .expander--toggle {
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 1em;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+
+    @include portable {
+      display: none;
+    }
+  }
+
+  .expander--content {
+
+    @include palm {
+      @include clearfix;
+      visibility: collapse;
+      max-height: 0;
+      transition: visibility .25s ease, max-height .5s ease;
+    }
+  }
+
+  &.expander--open > .expander--content {
+    visibility: visible;
+    max-height: 200em;
+  }
+
+}

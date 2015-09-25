@@ -1,7 +1,10 @@
 .main--wrapper {
   position: relative;
   min-height: 100%;
-  margin-top: 2em;
+
+  @include portable {
+    margin-top: $grid-gutter-width;
+  }
 
   .main--content {
     padding-top: 1em;

@@ -1,0 +1,89 @@
+.widget {
+  margin-bottom: $grid-gutter-width;
+  padding-left: $grid-gutter-width/2;
+  padding-right: $grid-gutter-width/2;
+
+  .widget--header {
+    position: relative;
+    padding: 0 $grid-gutter-width/2;
+    background-color: $color-1;
+
+    .widget--title {
+      color: #fff;
+      margin: 0;
+      line-height: 3em;
+    }
+  }
+
+  .widget--body {
+    background-color: $base-background-color;
+  }
+
+  ul {
+    padding: $grid-gutter-width/2 $grid-gutter-width;
+
+    a {
+      color: $color-1;
+    }
+
+    li {
+      display: block;
+      line-height: 3em;
+      border-bottom: 1px solid $color-1-lighter;
+
+      &:focus,
+      &:hover {
+        border-bottom: 1px solid $color-2;
+      }
+    }
+
+    li:focus > a,
+    li:hover > a {
+      color: $color-2;
+    }
+
+  }
+
+  &.widget--feed {
+    display: none;
+
+    @include portable {
+      display: block;
+    }
+  }
+
+  &.widget--collapse {
+
+    .widget--body {
+      @include clearfix;
+      overflow: hidden;
+      max-height: 0;
+      transition: all .25s ease;
+    }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    input[type=checkbox] ~ label {
+      position: absolute;
+      display: block;
+      top: .25em;
+      right: 2em;
+      line-height: 3em;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    input[type=checkbox]:checked ~ label {
+      color: $color-1-dark;
+    }
+
+    input[type=checkbox]:checked ~ .widget--body {
+      max-height: 200em;
+      transition: all .5s ease;
+    }
+
+  }
+
+}

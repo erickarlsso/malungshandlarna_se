@@ -1,40 +1,40 @@
     <footer class="footer--wrapper">
       <div class="container">
 
-        <article class="col--palm--12 col--portable--3">
+        <article class="col--palm--12 col--portable--3 mb--ggw">
           <?php
           if (has_nav_menu('header_primary')) :
             echo '<h5>Länkar</h5>';
             wp_nav_menu([
               'theme_location'  => 'header_primary',
               'container'       => 'false',
-              'menu_class'      => ''
+              'menu_class'      => 'mb--ggw'
             ]);
           endif;
           ?>
         </article>
 
-        <article class="col--palm--12 col--portable--3">
+        <article class="col--palm--12 col--portable--3 mb--ggw">
           <?php
           if (has_nav_menu('footer_partners')) :
             echo '<h5>Partners</h5>';
             wp_nav_menu([
               'theme_location'  => 'footer_partners',
               'container'       => 'false',
-              'menu_class'      => ''
+              'menu_class'      => 'mb--ggw'
             ]);
           endif;
           ?>
         </article>
 
-        <article class="col--palm--12 col--portable--3">
+        <article class="col--palm--12 col--portable--3 mb--ggw">
           <?php
           if (has_nav_menu('footer_other')) :
-            echo '<h5>Partners</h5>';
+            echo '<h5>Övrigt</h5>';
             wp_nav_menu([
               'theme_location'  => 'footer_other',
               'container'       => 'false',
-              'menu_class'      => ''
+              'menu_class'      => 'mb--ggw'
             ]);
           endif;
           ?>
@@ -49,7 +49,6 @@
     <?php wp_footer(); ?>
 
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/_lib/js/main.js"></script>
-
 
     <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

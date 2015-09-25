@@ -29,9 +29,12 @@ $em-base:  16px;
 @import 'base/forms';
 @import 'base/lists';
 @import 'base/tables';
+@import 'base/quirks';
 
 
 // Components
+@import 'components/expander';
+@import 'components/widgets';
 @import 'components/feature';
 
 
@@ -43,5 +46,6 @@ $em-base:  16px;
 
 
 // Pages
+@import 'pages/page-default';
 @import 'pages/page-home';
 @import 'pages/page-shop';

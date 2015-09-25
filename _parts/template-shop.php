@@ -4,7 +4,7 @@
       <div class="group">
 
         <figure class="col--palm--12 col--portable--12 store--cover">
-          <?php the_post_thumbnail( 'storecover' ); ?>
+          <?php the_post_thumbnail( 'gallerycover' ); ?>
         </figure>
 
       </div>
@@ -57,9 +57,9 @@
 
       <div class="group">
 
-        <aside class="col--palm--12 col--portable--4 store--widgets">
+        <aside class="col--palm--12 col--portable--4">
 
-          <figure class="google--map">
+          <div class="group widget widget--map">
             <?php
       				$location = get_field('map');
       				if( !empty($location) ):
@@ -68,12 +68,33 @@
       					echo '</div>';
       				endif;
       			?>
-          </figure>
+          </div>
+
+          <?php
+          if ( get_field('facebook') ) : ?>
+          <div class="group widget widget--feed">
+            <div class="fb-page"
+              data-href="<?php the_field('facebook'); ?>"
+              data-small-header="false"
+              data-adapt-container-width="true"
+              data-hide-cover="false"
+              data-width="360"
+              data-show-facepile="true"
+              data-show-posts="true">
+              <div class="fb-xfbml-parse-ignore">
+                <blockquote cite="<?php the_field('facebook'); ?>">
+                  <a href="<?php the_field('facebook'); ?>"><?php the_title(); ?></a>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+          <?php
+          endif;
+          ?>
 
         </aside>
 
-        <article class="col--palm--12 col--portable--8">
-          <h5>Om butiken</h5>
+        <article class="col--palm--12 col--portable--8 store--content">
           <?php the_content(); ?>
         </article>
 

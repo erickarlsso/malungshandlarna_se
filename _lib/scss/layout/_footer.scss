@@ -1,7 +1,13 @@
 .footer--wrapper {
   position: relative;
+  margin-top: $grid-gutter-width;
   padding: 3em 0;
-  background-color: $color-1-darker;
+  background-color: #333;
+  text-align: center;
+
+  @include portable {
+    text-align: left;
+  }
 
   h5 {
     color: #fff;

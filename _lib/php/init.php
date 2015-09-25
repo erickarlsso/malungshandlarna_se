@@ -15,7 +15,7 @@ if ( ! function_exists( 'theme_setup' ) ) :
     add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
     add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat' ) );
 
-		add_image_size('gallerycover', 1024, 324, array( 'center', 'center' ));
+		add_image_size('gallerycover', 1200, 400, array( 'center', 'center' ));
 		add_image_size('storecover', 1170, 658, array( 'center', 'center' ));
 	  add_image_size('background', 1500, 1125, array( 'center', 'center' ));
 

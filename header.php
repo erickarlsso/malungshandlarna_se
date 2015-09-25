@@ -57,3 +57,19 @@
 
       </div>
     </header>
+
+    <nav class="nav--wrapper">
+      <div class="container">
+
+        <?php
+        if (has_nav_menu('header_primary')) :
+          wp_nav_menu([
+            'theme_location'  => 'header_primary',
+            'container'       => 'false',
+            'menu_class'      => ''
+          ]);
+        endif;
+        ?>
+
+      </div>
+    </nav>
