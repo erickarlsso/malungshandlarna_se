@@ -11,3 +11,4 @@
 
 // Hide stuff
 .hide--palm { @include palm { display: none !important; } }
+.hide--portable { @include portable { display: none !important; } }

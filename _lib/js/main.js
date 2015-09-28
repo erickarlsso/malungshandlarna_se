@@ -61,23 +61,14 @@
     'page_template_template_shops': {
       init: function() {
 
-        if (matchMedia) {
-        	var mq = window.matchMedia("(min-width: 640px)");
-        	mq.addListener(WidthChange);
-        	WidthChange(mq);
-        }
-
-        function WidthChange(mq) {
-
-        	if (mq.matches) {
-
-            $('#filter').collapse({
-              toggle: true
-            })
-
-        	}
-
-        }
+        $("a[role='tab']").click(function(){
+        	$("a[role='tab']").attr("aria-selected","false"); //deselect all the tabs
+         	$(this).attr("aria-selected","true");  // select this tab
+        	var tabpanid= $(this).attr("aria-controls"); //find out what tab panel this tab controls
+           var tabpan = $("#"+tabpanid);
+        	$("div[role='tabpanel']").attr("aria-hidden","true"); //hide all the panels
+        	tabpan.attr("aria-hidden","false");  // show our panel
+        });
 
       },
       finalize: function() {

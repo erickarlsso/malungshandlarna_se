@@ -37,7 +37,7 @@
     <header class="header--wrapper">
       <div class="container">
 
-        <a href="<?php esc_url(home_url('/')); ?>" class="navbar--brand">
+        <a href="<?php echo get_site_url(); ?>" class="navbar--brand">
           <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/_lib/img/huvudlogga-svart_sv.png">
         </a>
 

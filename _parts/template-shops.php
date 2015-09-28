@@ -16,50 +16,53 @@
 
       <section class="col--palm--12 col--portable--12 filter--box">
 
-        <div class="widget">
+        <div class="group widget expander">
 
-          <h5 class="widget--header">
-            Hitta din butik
-            <a href="#" class="btn--toggle pull--right" data-toggle="collapse" data-target="#filter" aria-expanded="false" aria-controls="filter" type="button">
-              <i class="fa fa-th-list">&nbsp;</i>
-            </a>
-          </h5>
+          <div class="widget--header">
+            <h5 class="widget--title">
+              <i class="hide--palm fa fa-bars"> </i>
+              Välj kategori
+              <a href="#" class="expander--toggle">
+                <i class="fa fa-bars"> </i>
+              </a>
+            </h5>
+          </div>
 
-          <div id="filter" class="collapse">
-            <ul class="nav" role="tablist">
+          <div class="widget--body expander--content">
+            <ul class="nav nav--tabs" role="tablist">
 
-               <li class="nav-item col--palm--12 col--portable--2" role="presentation">
-                 <a class="nav-link active" href="#livs-detaljhandel" aria-controls="livs-detaljhandel" role="tab" data-toggle="tab">
+               <li class="nav-item col--palm--12 col--portable--2">
+                 <a class="nav-link" href="javascript:void(0)" aria-controls="livs-detaljhandel" aria-selected="true" role="tab">
                    <span>Livs & Detaljhandel</span>
                  </a>
                </li>
 
-               <li class="nav-item col--palm--12 col--portable--2" role="presentation">
-                 <a class="nav-link" href="#klader-mode" aria-controls="klader-mode" role="tab" data-toggle="tab">
+               <li class="nav-item col--palm--12 col--portable--2" role="tab">
+                 <a class="nav-link" href="javascript:void(0)" aria-controls="klader-mode" aria-selected="false" role="tab">
                    <span>Kläder & Mode</span>
                  </a>
                </li>
 
-               <li class="nav-item col--palm--12 col--portable--2" role="presentation">
-                 <a class="nav-link" href="#mat-dryck" aria-controls="mat-dryck" role="tab" data-toggle="tab">
+               <li class="nav-item col--palm--12 col--portable--2" role="tab">
+                 <a class="nav-link" href="javascript:void(0)" aria-controls="mat-dryck" aria-selected="false" role="tab">
                    <span>Mat & Dryck</span>
                  </a>
                </li>
 
-               <li class="nav-item col--palm--12 col--portable--2" role="presentation">
-                 <a class="nav-link" href="#samhalle-service" aria-controls="samhalle-service" role="tab" data-toggle="tab">
+               <li class="nav-item col--palm--12 col--portable--2" role="tab">
+                 <a class="nav-link" href="javascript:void(0)" aria-controls="samhalle-service" aria-selected="false" role="tab">
                    <span>Samhälle & Service</span>
                  </a>
                </li>
 
-               <li class="nav-item col--palm--12 col--portable--2" role="presentation">
-                 <a class="nav-link" href="#halsa-skonhet" aria-controls="halsa-skonhet" role="tab" data-toggle="tab">
+               <li class="nav-item col--palm--12 col--portable--2" role="tab">
+                 <a class="nav-link" href="javascript:void(0)" aria-controls="halsa-skonhet" aria-selected="false" role="tab">
                    <span>Hälsa & Skönhet</span>
                  </a>
                </li>
 
-               <li class="nav-item col--palm--12 col--portable--2" role="presentation">
-                 <a class="nav-link" href="#bygg-bil" aria-controls="bygg-bil" role="tab" data-toggle="tab">
+               <li class="nav-item col--palm--12 col--portable--2" role="tab">
+                 <a class="nav-link" href="javascript:void(0)" aria-controls="bygg-bil" aria-selected="false" role="tab">
                    <span>Bygg & Bil</span>
                  </a>
                </li>
@@ -73,9 +76,9 @@
 
       </section>
 
-      <article class="col--palm--12 col--portable--12 tab-content content--box">
+      <article class="col--palm--12 col--portable--12 tabs content--box">
 
-          <div role="tabpanel" class="tab-pane active" id="livs-detaljhandel">
+          <div class="tab--panel" id="livs-detaljhandel" role="tabpanel" aria-hidden="false">
 
             <?php
             $archive_args = array(
@@ -96,7 +99,7 @@
                   echo '<div class="btn-group">';
                     echo '<a class="btn btn-primary col--palm--8 col--portable--6" href="' . get_the_permalink() . '">Läs mer</a>';
                     if (get_field('website')) {
-                      echo '<a class="btn btn-inverse col-xs-4 col-sm-6" href="' . get_field('website') . '" target="_blank"><span class="visible-xs-up">Hemsida</span><i class="fa fa-external-link hidden-sm-up">&nbsp;</i></a>';
+                      echo '<a class="btn btn--invert col--palm--4 col--portable--6" href="' . get_field('website') . '" target="_blank"><span class="hide--palm">Hemsida</span><i class="fa fa-external-link hide--portable">&nbsp;</i></a>';
                     }
                   echo '</div>';
                 echo '</div>';
@@ -106,7 +109,7 @@
       			?>
 
           </div>
-          <div role="tabpanel" class="tab-pane" id="klader-mode">
+          <div class="tab--panel" id="klader-mode" role="tabpanel" aria-hidden="true">
 
             <?php
             $archive_args = array(
@@ -127,7 +130,7 @@
                 echo '<div class="btn-group">';
                   echo '<a class="btn btn-primary col--palm--8 col--portable--6" href="' . get_the_permalink() . '">Läs mer</a>';
                   if (get_field('website')) {
-                    echo '<a class="btn btn-inverse col-xs-4 col-sm-6" href="' . get_field('website') . '" target="_blank"><span class="visible-xs-up">Hemsida</span><i class="fa fa-external-link hidden-sm-up">&nbsp;</i></a>';
+                    echo '<a class="btn btn--invert col--palm--4 col--portable--6" href="' . get_field('website') . '" target="_blank"><span class="hide--palm">Hemsida</span><i class="fa fa-external-link hide--portable">&nbsp;</i></a>';
                   }
                 echo '</div>';
               echo '</div>';
@@ -137,7 +140,7 @@
       			?>
 
           </div>
-          <div role="tabpanel" class="tab-pane" id="mat-dryck">
+          <div class="tab--panel" id="mat-dryck" role="tabpanel" aria-hidden="true">
 
             <?php
             $archive_args = array(
@@ -158,7 +161,7 @@
                 echo '<div class="btn-group">';
                   echo '<a class="btn btn-primary col--palm--8 col--portable--6" href="' . get_the_permalink() . '">Läs mer</a>';
                   if (get_field('website')) {
-                    echo '<a class="btn btn-inverse col-xs-4 col-sm-6" href="' . get_field('website') . '" target="_blank"><span class="visible-xs-up">Hemsida</span><i class="fa fa-external-link hidden-sm-up">&nbsp;</i></a>';
+                    echo '<a class="btn btn--invert col--palm--4 col--portable--6" href="' . get_field('website') . '" target="_blank"><span class="hide--palm">Hemsida</span><i class="fa fa-external-link hide--portable">&nbsp;</i></a>';
                   }
                 echo '</div>';
               echo '</div>';
@@ -168,7 +171,7 @@
       			?>
 
           </div>
-          <div role="tabpanel" class="tab-pane" id="samhalle-service">
+          <div class="tab--panel" id="samhalle-service" role="tabpanel" aria-hidden="true">
 
             <?php
             $archive_args = array(
@@ -189,7 +192,7 @@
                 echo '<div class="btn-group">';
                   echo '<a class="btn btn-primary col--palm--8 col--portable--6" href="' . get_the_permalink() . '">Läs mer</a>';
                   if (get_field('website')) {
-                    echo '<a class="btn btn-inverse col-xs-4 col-sm-6" href="' . get_field('website') . '" target="_blank"><span class="visible-xs-up">Hemsida</span><i class="fa fa-external-link hidden-sm-up">&nbsp;</i></a>';
+                    echo '<a class="btn btn--invert col--palm--4 col--portable--6" href="' . get_field('website') . '" target="_blank"><span class="hide--palm">Hemsida</span><i class="fa fa-external-link hide--portable">&nbsp;</i></a>';
                   }
                 echo '</div>';
               echo '</div>';
@@ -199,7 +202,7 @@
       			?>
 
           </div>
-          <div role="tabpanel" class="tab-pane" id="halsa-skonhet">
+          <div class="tab--panel" id="halsa-skonhet" role="tabpanel" aria-hidden="true">
 
             <?php
             $archive_args = array(
@@ -220,7 +223,7 @@
                 echo '<div class="btn-group">';
                   echo '<a class="btn btn-primary col--palm--8 col--portable--6" href="' . get_the_permalink() . '">Läs mer</a>';
                   if (get_field('website')) {
-                    echo '<a class="btn btn-inverse col-xs-4 col-sm-6" href="' . get_field('website') . '" target="_blank"><span class="visible-xs-up">Hemsida</span><i class="fa fa-external-link hidden-sm-up">&nbsp;</i></a>';
+                    echo '<a class="btn btn--invert col--palm--4 col--portable--6" href="' . get_field('website') . '" target="_blank"><span class="hide--palm">Hemsida</span><i class="fa fa-external-link hide--portable">&nbsp;</i></a>';
                   }
                 echo '</div>';
               echo '</div>';
@@ -230,7 +233,7 @@
       			?>
 
           </div>
-          <div role="tabpanel" class="tab-pane" id="bygg-bil">
+          <div class="tab--panel" id="bygg-bil" role="tabpanel" aria-hidden="true">
 
             <?php
             $archive_args = array(
@@ -251,7 +254,7 @@
                 echo '<div class="btn-group">';
                   echo '<a class="btn btn-primary col--palm--8 col--portable--6" href="' . get_the_permalink() . '">Läs mer</a>';
                   if (get_field('website')) {
-                    echo '<a class="btn btn-inverse col-xs-4 col-sm-6" href="' . get_field('website') . '" target="_blank"><span class="visible-xs-up">Hemsida</span><i class="fa fa-external-link hidden-sm-up">&nbsp;</i></a>';
+                    echo '<a class="btn btn--invert col--palm--4 col--portable--6" href="' . get_field('website') . '" target="_blank"><span class="hide--palm">Hemsida</span><i class="fa fa-external-link hide--portable">&nbsp;</i></a>';
                   }
                 echo '</div>';
               echo '</div>';

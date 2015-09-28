@@ -33,6 +33,7 @@ $em-base:  16px;
 
 
 // Components
+@import 'components/tabs';
 @import 'components/expander';
 @import 'components/widgets';
 @import 'components/feature';
@@ -49,3 +50,4 @@ $em-base:  16px;
 @import 'pages/page-default';
 @import 'pages/page-home';
 @import 'pages/page-shop';
+@import 'pages/page-shops';

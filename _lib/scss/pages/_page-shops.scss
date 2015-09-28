@@ -1,26 +1,40 @@
 .page-template-template-shops
 .main--wrapper {
 
-  .filter--box {
-    background-color: $color-1-dark;
+  .main--content {
+    @include portable {
+      padding-top: 0;
+    }
+  }
 
-    @include media-breakpoint-up(sm) {
+  .filter--box {
+    margin-bottom: $grid-gutter-width;
+
+    @include portable {
+      padding: 0;
+      background-color: $color-1-dark;
+    }
+
+    .widget {
+      margin: 0;
       padding: 0;
     }
 
-    .widget--header {
-      color: #fff;
-      text-align: center;
+    .expander .widget--header {
+      @include portable {
+        display: none;
+      }
     }
 
     .nav {
       text-align: left;
-      margin-left: -.9375rem;
-      margin-right: -.9375rem;
+      margin-left: -.9375em;
+      margin-right: -.9375em;
 
-      @include media-breakpoint-up(sm) {
+      @include portable {
         text-align: center;
         margin: 0;
+        padding: 0;
       }
     }
 
@@ -29,44 +43,47 @@
       padding: 0;
       float: none;
 
-      @include media-breakpoint-down(xs) {
-        line-height: 3rem;
+      @include palm {
+        line-height: 3em;
       }
 
-      @include media-breakpoint-up(sm) {
+      @include portable {
         float: left;
+        border: none;
 
         &:first-child a {
-          padding-left: 1rem;
+          padding-left: 1em;
         }
       }
     }
 
     .nav > li > a {
       display: block;
-      padding: 0 .75rem;
-      color: #fff;
-      font-weight: 700;
+      padding: 0 .75em;
+      color: $color-1;
       transition: all .25s ease;
 
-      @include media-breakpoint-up(sm) {
-        height: 5rem;
-        font-size: .75rem;
+      @include portable {
+        height: 5em;
+        color: #fff;
+        font-weight: 700;
+        font-size: .75em;
+        line-height: 1;
       }
 
-      @include media-breakpoint-up(lg) {
-        font-size: 1rem;
+      @include desktop {
+        font-size: 1em;
       }
 
     }
 
-    .nav > li > a.active {
+    .nav > li > a[aria-selected="true"] {
       background-color: $color-1-darker;
       color: #fff;
     }
 
-    .nav > li > a.active::after {
-      @include media-breakpoint-up(sm) {
+    .nav > li > a[aria-selected="true"]::after {
+      @include portable {
         position: absolute;
         content: " ";
         bottom: 0;
@@ -77,13 +94,13 @@
         border: solid transparent;
         border-color: rgba($color-1-dark, 0);
       	border-bottom-color: #fff;
-      	border-width: 1rem;
+      	border-width: 1em;
         transform: translateX(-50%);
       }
     }
 
     .nav > li > a > span {
-      @include media-breakpoint-up(sm) {
+      @include portable {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -93,47 +110,70 @@
 
   }
 
+  .tab--panel[aria-hidden='true'] {
+    display: none;
+  }
+
   .panel--box {
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1.5em 0;
 
     .inner {
       position: relative;
+      float: left;
+    }
+
+    img {
+      display: block;
     }
 
     figcaption {
       position: relative;
-      height: 3rem;
+      height: 3em;
       background-color: $color-1-dark;
     }
 
     h4 {
       position: absolute;
       top: 50%;
-      padding: .5rem;
+      padding: .5em;
       margin: 0;
-      font-size: 1rem;
+      font-size: 1em;
       font-weight: 700;
       color: #fff;
       transform: translateY(-50%);
     }
 
     .btn-group {
+      float: left;
       width: 100%;
-      border-top: 0.075rem solid rgba(#000, .1);
       background-color: $color-1-darker;
+
+      @include portable {
+        border-top: 0.075em solid rgba(#000, .1);
+      }
     }
 
     .btn {
       border: none;
       color: rgba(#fff, .75);
-      font-size: .75rem;
+      font-size: .75em;
       background-color: transparent;
       border-radius: 0;
+
+      @include laptop {
+        text-align: center;
+      }
 
       &:focus,
       &:hover {
         color: #fff;
         text-decoration: underline;
+      }
+    }
+
+    .btn--invert {
+      @include palm {
+        background-color: $color-2;
       }
     }
 
