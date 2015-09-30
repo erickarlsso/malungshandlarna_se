@@ -2,14 +2,6 @@
 .main--wrapper {
   margin: 0;
 
-  .feature {
-    position: relative;
-    padding: 4em 0;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-  }
-
   .feature--blank {
     background-color: $color-1-dark;
 
@@ -47,18 +39,6 @@
   .feature--about {
     background-color: $color-1-darker;
 
-    &:before {
-      position: absolute;
-      content: " ";
-      top: 0;
-      left: 50%;
-      border: solid transparent;
-      border-color: rgba($color-1-dark, 0);
-      border-top-color: $color-1-dark;
-      border-width: 3em;
-      transform: translateX(-50%);
-    }
-
     .content--box {
       @include portable {
         padding: 0;
@@ -84,9 +64,4 @@
 
   }
 
-}
-
-.page-template-template-home
-.footer--wrapper {
-  margin-top: 0;
 }

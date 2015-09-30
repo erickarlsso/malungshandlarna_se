@@ -32,7 +32,7 @@
     </div>
   </section>
 
-  <section class="feature feature--about">
+  <section class="feature feature--feed--down feature--about">
     <div class="container">
 
       <article class="col--palm--12 col--portable--offset--1 col--portable--5 content--box">
