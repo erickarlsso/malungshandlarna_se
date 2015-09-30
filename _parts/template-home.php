@@ -8,31 +8,34 @@
 
 <main class="main--wrapper">
 
-  <section class="group feature feature--blank">
-    <div class="container--full">
+  <section class="feature feature--blank">
+    <div class="container">
 
-      <article class="col--palm--12 col--portable--offset--1 col--portable--6">
-        <img class="image--border" src="http://erickarlsson.nu/malungshandlarna/wp-content/uploads/2015/07/Ica-1170x658.jpg">
-        <h1>
-          Landsbygdsshopping när den är som bäst
-        </h1>
-        <p>
-          Letar Du efter nån?
-          <a class="" href="<?php esc_url(home_url('/')); ?>handlare">Hitta handlare <i class="fa fa-arrow-circle-o-right"> </i></a>
-        </p>
-      </article>
+      <?php
+      if ( get_field('gallery') ) :
+        get_template_part( '_parts/module', 'carousel' );
+      endif;
+      ?>
 
-      <figure class="col--palm--offset--2 col--palm--8 col--portable--offset--0 col--portable--3">
-        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/_lib/img/mh-malkom.png">
-      </figure>
+      <div class="group">
+
+        <article class="col--palm--12 col--portable--12 text--intro">
+          <h1>Landsbygdsshopping när den är som bäst</h1>
+          <p>
+            <a class="btn" href="<?php esc_url(home_url('/')); ?>handlare">Hitta handlare <i class="fa fa-arrow-circle-o-right"> </i></a>
+            <a class="btn" href="<?php esc_url(home_url('/')); ?>handlare">Se arrangemang <i class="fa fa-arrow-circle-o-right"> </i></a>
+          </p>
+        </article>
+
+      </div>
 
     </div>
   </section>
 
-  <section class="group feature feature--about">
+  <section class="feature feature--about">
     <div class="container">
 
-      <article class="col--palm--12 col--portable--offset--1 col--portable--4 content--box">
+      <article class="col--palm--12 col--portable--offset--1 col--portable--5 content--box">
         <h2>Välkummin jåt</h2>
         <?php
         while ( have_posts() ) : the_post();

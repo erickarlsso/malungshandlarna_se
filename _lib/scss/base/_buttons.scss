@@ -1,22 +1,18 @@
 .btn {
-  appearance: none;
-  background-color: $color-2;
-  border: 0;
-  border-radius: $base-border-radius;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
+  margin-bottom: $grid-gutter-width/2;
   padding: $small-spacing $base-spacing;
-  text-decoration: none;
-  transition: background-color $base-duration $base-timing;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  font-weight: $heading-font-weight;
+  text-transform: uppercase;
+  border: .25em solid #fff;
+  background-color: $color-2;;
+  border-radius: $base-border-radius;
+  transition: all $base-duration $base-timing;
 
   &:hover,
   &:focus {

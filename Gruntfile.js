@@ -10,6 +10,10 @@ module.exports = function(grunt) {
         files: '_lib/scss/**/*.scss',
         tasks: ['sass', 'autoprefixer', 'bsReload:css']
       },
+      js: {
+        files: '_lib/js/*.js',
+        tasks: ['concat:dev', 'uglify:dev', 'bsReload:all']
+      },
       html: {
         files: '_lib/*.html',
         tasks: ['bsReload:all']
@@ -29,6 +33,25 @@ module.exports = function(grunt) {
         outputStyle: 'compressed',
         sourceMap: true
       },
+    },
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dev: {
+        src: ['_lib/js/main.js', '_lib/js/vendor/owl.carousel.js'],
+        dest: '_lib/js/_main.merge.js',
+      },
+    },
+    uglify: {
+      options: {
+
+      },
+      dev: {
+        files: {
+          '_lib/js/main.min.js': ['_lib/js/_main.merge.js']
+        }
+      }
     },
     autoprefixer: {
       options: {
@@ -62,6 +85,8 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-browser-sync');

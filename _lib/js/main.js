@@ -19,8 +19,21 @@
     'common': {
       init: function() {
 
+        // carousel
+        $(".carousel").owlCarousel({
+          navigation: true,
+          slideSpeed: 300,
+          pagination: false,
+          autoPlay: true,
+          paginationSpeed: 400,
+          singleItem: true,
+          navigationText: [
+            "<i class='fa fa-chevron-left fa-2x'> </i>",
+            "<i class='fa fa-chevron-right fa-2x'> </i>"
+          ],
+        });
 
-        // expander-function
+        // expander
         $expanderToggle = $('.expander--toggle');
         $expanderContent = $('.expander--content');
 
