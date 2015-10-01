@@ -16,6 +16,7 @@
 
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/_lib/js/vendor/respond.min.js"></script>
     <![endif]-->
 
     <?php wp_head(); ?>

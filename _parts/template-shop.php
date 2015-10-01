@@ -14,13 +14,22 @@
         <article class="col--palm--12 col--portable--12 store--info">
           <?php the_title('<h1>', '</h1>'); ?>
           <ul class="nav">
+            <li class="col--palm-12 hide--portable">
+              <h5>
+                <i class="fa fa-facebook"> </i>
+                Facebook
+              </h5>
+              <p>
+                <a href="tel:<?php the_field('facebook'); ?>" target="_blank">Klicka här</a>
+              </p>
+            </li>
             <li class="col--palm-12 col--portable--3">
               <h5>
                 <i class="fa fa-external-link"> </i>
                 Hemsida
               </h5>
               <p>
-                <a href="tel:<?php the_field('website'); ?>" target="_blank"><?php the_field('website'); ?></a>
+                <a href="tel:<?php the_field('website'); ?>" target="_blank">Klicka här</a>
               </p>
             </li>
             <li class="col--palm-12 col--portable--3">

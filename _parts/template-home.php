@@ -23,7 +23,7 @@
           <h1>Landsbygdsshopping när den är som bäst</h1>
           <p>
             <a class="btn" href="<?php esc_url(home_url('/')); ?>handlare">Hitta handlare <i class="fa fa-arrow-circle-o-right"> </i></a>
-            <a class="btn" href="<?php esc_url(home_url('/')); ?>handlare">Se arrangemang <i class="fa fa-arrow-circle-o-right"> </i></a>
+            <a class="btn" href="<?php esc_url(home_url('/')); ?>arrangemang">Se arrangemang <i class="fa fa-arrow-circle-o-right"> </i></a>
           </p>
         </article>
 
