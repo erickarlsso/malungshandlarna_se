@@ -29,7 +29,7 @@
                 Hemsida
               </h5>
               <p>
-                <a href="tel:<?php the_field('website'); ?>" target="_blank">Klicka här</a>
+                <a href="<?php the_field('website'); ?>" target="_blank">Klicka här</a>
               </p>
             </li>
             <li class="col--palm-12 col--portable--3">
