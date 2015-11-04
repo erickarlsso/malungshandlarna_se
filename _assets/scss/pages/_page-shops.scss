@@ -12,7 +12,7 @@
 
     @include portable {
       padding: 0;
-      background-color: $color-1-dark;
+      background-color: $color-2;
     }
 
     .widget {
@@ -24,6 +24,11 @@
       @include portable {
         display: none;
       }
+    }
+
+    .expander--content {
+
+
     }
 
     .nav {
@@ -45,6 +50,7 @@
 
       @include palm {
         line-height: 3em;
+        border-bottom: .0625em solid #f1f1f1;
       }
 
       @include portable {
@@ -60,7 +66,7 @@
     .nav > li > a {
       display: block;
       padding: 0 .75em;
-      color: $color-1;
+      color: $base-text-color;
       transition: all .25s ease;
 
       @include portable {
@@ -78,8 +84,12 @@
     }
 
     .nav > li > a[aria-selected="true"] {
-      background-color: $color-1-darker;
+      background-color: $color-2;
       color: #fff;
+
+      @include portable {
+        background-color: $color-2-dark;
+      }
     }
 
     .nav > li > a[aria-selected="true"]::after {
@@ -92,7 +102,7 @@
       	width: 0;
         pointer-events: none;
         border: solid transparent;
-        border-color: rgba($color-1-dark, 0);
+        border-color: rgba(#fff, 0);
       	border-bottom-color: #fff;
       	border-width: 1em;
         transform: translateX(-50%);
@@ -128,7 +138,7 @@
     figcaption {
       position: relative;
       height: 3em;
-      background-color: $color-1-dark;
+      background-color: $color-2;
     }
 
     h4 {
@@ -145,7 +155,7 @@
     .btn-group {
       float: left;
       width: 100%;
-      background-color: $color-1-darker;
+      background-color: $color-2-dark;
 
       @include portable {
         border-top: 0.075em solid rgba(#000, .1);
@@ -175,6 +185,10 @@
       @include palm {
         background-color: $color-2;
       }
+    }
+
+    .btn--invert i {
+      margin-left: -.25em;
     }
 
   }

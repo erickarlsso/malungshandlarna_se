@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_template_part( 'templates/site', 'header' ); ?>
 
 <main class="main--wrapper">
   <div class="container main--content">
@@ -23,7 +23,7 @@
               <i class="hide--palm fa fa-bars"> </i>
               Välj kategori
               <a href="#" class="expander--toggle">
-                <i class="fa fa-bars"> </i>
+                <i class="fa fa--toggle"> </i>
               </a>
             </h5>
           </div>
@@ -32,7 +32,7 @@
             <ul class="nav nav--tabs" role="tablist">
 
                <li class="nav-item col--palm--12 col--portable--2">
-                 <a class="nav-link" href="javascript:void(0)" aria-controls="livs-detaljhandel" aria-selected="true" role="tab">
+                 <a class="nav-link" href="javascript:void(0)" aria-controls="livs-detaljhandel" aria-selected="false" role="tab">
                    <span>Livs & Detaljhandel</span>
                  </a>
                </li>
@@ -78,7 +78,19 @@
 
       <article class="col--palm--12 col--portable--12 tabs content--box">
 
-          <div class="tab--panel" id="livs-detaljhandel" role="tabpanel" aria-hidden="false">
+          <div class="tab--panel" id="none" role="tabpanel" aria-hidden="false">
+            <div class="group">
+              <div class="col--palm--12 col--portable--4">
+                <h2>Välj nått</h2>
+                <p>välj en kategori för att hitta handlare</p>
+              </div>
+              <div class="col--palm--12 col--portable--4">
+                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/_assets/img/mh-malkom.png">
+              </div>
+            </div>
+          </div>
+
+          <div class="tab--panel" id="livs-detaljhandel" role="tabpanel" aria-hidden="true">
 
             <?php
             $archive_args = array(
@@ -276,4 +288,4 @@
 
 </main>
 
-<?php get_footer(); ?>
+<?php get_template_part( 'templates/site', 'footer' ); ?>

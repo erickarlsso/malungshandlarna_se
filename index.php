@@ -1,21 +1,21 @@
 <?php
 
-  get_header();
+  get_template_part( 'templates/site', 'header' );
 
     if ( have_posts() ) :
 
       while ( have_posts() ) : the_post();
 
-				get_template_part( '_parts/content', get_post_format() );
+				get_template_part( 'templates/content', get_post_format() );
 
 			endwhile;
 
     else :
 
-      get_template_part( '_parts/content', 'none' );
+      get_template_part( 'templates/content', 'none' );
 
     endif;
 
-  get_footer();
+  get_template_part( 'templates/site', 'footer' );
 
 ?>

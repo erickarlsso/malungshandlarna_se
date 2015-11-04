@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_template_part( 'templates/site', 'header' ); ?>
 
 <main class="main--wrapper">
 
@@ -13,7 +13,7 @@
 
       <?php
       if ( get_field('gallery') ) :
-        get_template_part( '_parts/module', 'carousel' );
+        get_template_part( 'templates/module', 'carousel' );
       endif;
       ?>
 
@@ -55,4 +55,4 @@
 
 </main>
 
-<?php get_footer(); ?>
+<?php get_template_part( 'templates/site', 'footer' ); ?>

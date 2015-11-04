@@ -8,7 +8,7 @@
 
     <link rel="profile" href="http://gmpg.org/xfn/11">
   	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/_lib/css/site.css">
+    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/_assets/css/site.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -39,7 +39,7 @@
       <div class="container">
 
         <a href="<?php echo get_site_url(); ?>" class="navbar--brand">
-          <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/_lib/img/huvudlogga-svart_sv.png">
+          <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/_assets/img/huvudlogga-svart_sv.png">
         </a>
 
         <?php

@@ -20,10 +20,11 @@
                 Facebook
               </h5>
               <p>
-                <a href="tel:<?php the_field('facebook'); ?>" target="_blank">Klicka här</a>
+                <a href="<?php the_field('facebook'); ?>" target="_blank">Klicka här</a>
               </p>
             </li>
             <li class="col--palm-12 col--portable--3">
+              <?php if ( get_field('website') ) : ?>
               <h5>
                 <i class="fa fa-external-link"> </i>
                 Hemsida
@@ -31,6 +32,7 @@
               <p>
                 <a href="<?php the_field('website'); ?>" target="_blank">Klicka här</a>
               </p>
+              <?php endif; ?>
             </li>
             <li class="col--palm-12 col--portable--3">
               <h5>

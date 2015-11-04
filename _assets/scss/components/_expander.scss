@@ -25,6 +25,15 @@
     }
   }
 
+  .widget--header .expander--toggle .fa--toggle:before {
+    content: "\f0c9";
+  }
+
+  &.expander--open > .widget--header
+  .expander--toggle .fa--toggle:before {
+    content: "\f00d";
+  }
+
   &.expander--open > .expander--content {
     visibility: visible;
     max-height: 200em;

@@ -1,6 +1,6 @@
 <?php
 
-  get_header();
+  get_template_part( 'templates/site', 'header' );
 
     if ( have_posts() ) :
 
@@ -8,11 +8,11 @@
 
         if ( is_singular('medlemmar') ) :
 
-				      get_template_part( '_parts/template', 'shop' );
+				      get_template_part( 'templates/template', 'shop' );
 
         else :
 
-              get_template_part( '_parts/content', get_post_type );
+              get_template_part( 'templates/content', get_post_type );
 
         endif;
 
@@ -20,10 +20,10 @@
 
     else :
 
-      get_template_part( '_parts/content', 'none' );
+      get_template_part( 'templates/content', 'none' );
 
     endif;
 
-  get_footer();
+  get_template_part( 'templates/site', 'footer' );
 
 ?>

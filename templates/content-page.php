@@ -17,12 +17,12 @@
       if ( is_page() && ($post->post_parent || count( $children ) > 0  )) :
 
         echo '<aside class="col--palm--12 col--portable--3">';
-          get_template_part( '_parts/module', 'subnav' );
+          get_template_part( 'templates/module', 'subnav' );
         echo '</aside>';
 
         echo '<article class="col--palm--12 col--portable--9">';
           the_title('<h1>', '</h1>');
-          get_template_part( '_parts/module', 'sharebox' );
+          get_template_part( 'templates/module', 'sharebox' );
           the_content();
         echo '</article>';
 
@@ -37,7 +37,7 @@
             echo '</div';
           endif;
           the_title('<h1>', '</h1>');
-          get_template_part( '_parts/module', 'sharebox' );
+          get_template_part( 'templates/module', 'sharebox' );
           the_content();
         echo '</article>';
 

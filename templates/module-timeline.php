@@ -4,7 +4,7 @@
     $archive_args = array(
       post_type => 'arrangemang',
       'posts_per_page'=> -1,
-      'orderby' => 'date',
+      'orderby' => 'startdate',
       'order'   => 'ASC'
     );
 
@@ -15,7 +15,7 @@
           <?php the_title('<h4>', '</h4>'); ?>
           <p class="timeline--date">
             <i class="fa fa-clock"> </i>
-            <?php the_field('date'); ?>
+            <?php the_field('startdate'); ?>
              -
             <i class="fa fa-map-marker"> </i>
             <?php the_field('location'); ?>

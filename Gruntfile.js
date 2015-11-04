@@ -7,26 +7,26 @@ module.exports = function(grunt) {
         spawn: false
       },
       sass: {
-        files: '_lib/scss/**/*.scss',
+        files: '_assets/scss/**/*.scss',
         tasks: ['sass', 'autoprefixer', 'bsReload:css']
       },
       js: {
-        files: '_lib/js/*.js',
+        files: '_assets/js/*.js',
         tasks: ['concat:dev', 'uglify:dev', 'bsReload:all']
       },
       html: {
-        files: '_lib/*.html',
+        files: '_assets/*.html',
         tasks: ['bsReload:all']
       },
       php: {
-        files: ['./*.php', '_lib/php/*.php', '_parts/*.php'],
+        files: ['./*.php', '_assets/php/*.php', '_parts/*.php'],
         tasks: ['bsReload:all']
       }
     },
     sass: {
       dev: {
         files: {
-          '_lib/css/site.css': '_lib/scss/site.scss'
+          '_assets/css/site.css': '_assets/scss/site.scss'
         }
       },
       options: {
@@ -39,8 +39,8 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dev: {
-        src: ['_lib/js/main.js', '_lib/js/vendor/owl.carousel.js'],
-        dest: '_lib/js/_main.merge.js',
+        src: ['_assets/js/main.js', '_assets/js/vendor/owl.carousel.js'],
+        dest: '_assets/js/_main.merge.js',
       },
     },
     uglify: {
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
       },
       dev: {
         files: {
-          '_lib/js/main.min.js': ['_lib/js/_main.merge.js']
+          '_assets/js/main.min.js': ['_assets/js/_main.merge.js']
         }
       }
     },
@@ -58,12 +58,12 @@ module.exports = function(grunt) {
         browsers: ['last 5 versions', 'ie 8']
       },
       css: {
-        src: '_lib/css/site.css',
-        dest: '_lib/css/site.css'
+        src: '_assets/css/site.css',
+        dest: '_assets/css/site.css'
       }
     },
     jshint: {
-      dev: ['_lib/js/*.js']
+      dev: ['_assets/js/*.js']
     },
     browserSync: {
       dev: {
