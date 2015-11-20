@@ -1,1 +1,5 @@
+// Synka inte npm-paketen
 node_modules
+
+// Synka inte finder filer
+.DS_Store
