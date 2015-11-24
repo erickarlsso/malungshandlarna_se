@@ -1,0 +1,38 @@
+.widget {
+  margin-bottom: $grid-gutter-width;
+  background-color: $white;
+
+  .widget--title {
+    position: relative;
+    display: inline-block;
+    padding: .5rem 1rem .25rem;
+    margin: 1rem 0 .5rem (-$grid-gutter-width / 2);
+    color: $white;
+    text-align: center;
+    z-index: 1;
+    background-color: $color-1;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: " ";
+      width: ($grid-gutter-width / 4);
+      left: 0;
+      bottom: -($grid-gutter-width / 2);
+      border: ($grid-gutter-width / 2) solid $color-1-dark;
+      border-style: solid;
+      border-color: $color-1-dark transparent transparent transparent;
+      border-width: ($grid-gutter-width / 2) 0 0 ($grid-gutter-width / 2);
+    }
+
+  }
+
+  .widget--body {
+    padding: 0 .5rem;
+
+    .body--content {
+      background-color: $white;
+    }
+  }
+
+}

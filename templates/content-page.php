@@ -1,49 +1,78 @@
-<main class="main--wrapper">
+<?php while (have_posts()) : the_post(); ?>
 
-  <div class="container main--content">
+  <main class="main--wrap">
+
+    <div class="container">
+
+    <?php if ( has_post_thumbnail() ) : ?>
+      <div class="row">
+
+        <figure class="col-xs-12 post--image">
+          <?php the_post_thumbnail( 'gallerycover' ); ?>
+        </figure>
+
+      </div>
+    <?php endif; ?>
 
     <?php
+    global $post;
+    $children = get_pages( array( 'child_of' => $post->ID ) );
+    if ( is_page() && ($post->post_parent || count( $children ) > 0  )) : ?>
 
-      if ( has_post_thumbnail() ) :
-        echo '<div class="group">';
-          echo '<figure class="col--palm--12 col--portable--12 page--cover">';
-            the_post_thumbnail( 'gallerycover' );
-          echo '</figure>';
-        echo '</div>';
-      endif;
+      <div class="row with--aside">
 
-      global $post;
-      $children = get_pages( array( 'child_of' => $post->ID ) );
-      if ( is_page() && ($post->post_parent || count( $children ) > 0  )) :
+        <aside class="hidden-xs-down col-sm-4 col-lg-3 aside--wrap">
 
-        echo '<aside class="col--palm--12 col--portable--3">';
-          get_template_part( 'templates/module', 'subnav' );
-        echo '</aside>';
+          <div class="widget">
 
-        echo '<article class="col--palm--12 col--portable--9">';
-          the_title('<h1>', '</h1>');
-          get_template_part( 'templates/module', 'sharebox' );
-          the_content();
-        echo '</article>';
+            <div class="widget--title">
+              <h4>Navigering</h4>
+            </div>
 
-      else :
+            <ul class="nav">
+              <?php
+                global $post;
 
-        echo '<article class="col--palm--12 col--portable--12">';
-          if ( has_post_thumbnail() ) :
-            echo '<div class="group">';
-              echo '<figure class="col--palm--12 col--portable--12">';
-                the_post_thumbnail( 'gallerycover' );
-              echo '</figure>';
-            echo '</div';
-          endif;
-          the_title('<h1>', '</h1>');
-          get_template_part( 'templates/module', 'sharebox' );
-          the_content();
-        echo '</article>';
+                if($post->post_parent) {
+                    $parent_id = get_post_ancestors($post->ID);
+                    $id = end($parent_id);
+                } else {
+                    $id = $post->ID;
+                }
+                wp_list_pages('title_li=&child_of=' . $id);
+              ?>
+            </ul>
 
-      endif;
+          </div>
+
+        </aside>
+
+        <article class="col-xs-12 col-sm-8 col-lg-9 post--content">
+          <?php the_title('<h1>', '</h1>'); ?>
+          <?php the_content(); ?>
+        </article>
+
+      </div>
+
+    <?php
+    else :
     ?>
 
-  </div>
+      <div class="row">
 
-</main>
+        <article class="col-xs-12 post--content">
+          <?php the_title('<h1 class="display-1">', '</h1>'); ?>
+          <?php the_content(); ?>
+        </article>
+
+      </div>
+
+    <?php
+    endif;
+    ?>
+
+    </div>
+
+  </main>
+
+<?php endwhile; ?>

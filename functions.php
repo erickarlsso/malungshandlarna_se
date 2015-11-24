@@ -1,9 +1,10 @@
 <?php
 
 $theme_includes = [
-  'functions/init.php',
-  'functions/config.php',
-  'functions/post-types.php'
+  'library/assets.php',
+  'library/init.php',
+  'library/setup.php',
+  'library/post-types.php'
 ];
 foreach ($theme_includes as $file) {
   if (!$filepath = locate_template($file)) {

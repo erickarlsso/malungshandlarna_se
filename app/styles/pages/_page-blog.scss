@@ -1,0 +1,33 @@
+body.blog .aside--wrap .widget {
+
+}
+
+body.blog .aside--wrap .widget_recent_entries {
+
+  ul {
+    margin: 0;
+    padding: $grid-gutter-width / 2;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding: .5rem 0;
+      border-bottom: .1rem dotted rgba($gray-dark, .5);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    a {
+      display: inline-block;
+
+    }
+
+    span {
+      @include clearfix;
+      font-size: .75rem;
+    }
+
+  }
+}

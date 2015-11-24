@@ -1,21 +1,15 @@
 <?php
+get_header();
 
-  get_template_part( 'templates/site', 'header' );
+  if ( is_singular('medlemmar') ) :
 
-    if ( have_posts() ) :
+    get_template_part('templates/template', 'shop');
 
-      while ( have_posts() ) : the_post();
+  else :
 
-				get_template_part( 'templates/content', get_post_format() );
+    get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format());
 
-			endwhile;
+  endif;
 
-    else :
-
-      get_template_part( 'templates/content', 'none' );
-
-    endif;
-
-  get_template_part( 'templates/site', 'footer' );
-
+get_footer();
 ?>

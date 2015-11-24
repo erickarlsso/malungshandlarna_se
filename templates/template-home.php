@@ -1,58 +1,116 @@
 <?php
 /**
- * Template Name: Startsida
- */
+* Template Name: Startsida
+*/
 ?>
 
-<?php get_template_part( 'templates/site', 'header' ); ?>
+<?php get_header(); ?>
 
-<main class="main--wrapper">
+<?php while (have_posts()) : the_post(); ?>
 
-  <section class="feature feature--blank">
-    <div class="container">
+  <?php if ( has_post_thumbnail() ) :
+    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'cover' );
+    echo '<section class="feature feature--intro" style="background-image:url(' . $url = $thumb['0'] . ');">'; ?>
+      <div class="container">
 
-      <?php
-      if ( get_field('gallery') ) :
-        get_template_part( 'templates/module', 'carousel' );
-      endif;
-      ?>
+          <article class="col-xs-12 v--align">
 
-      <div class="group">
+            <h1>Landsbygdsshopping<br>när den är som bäst</h1>
 
-        <article class="col--palm--12 col--portable--12 text--intro">
-          <h1>Landsbygdsshopping när den är som bäst</h1>
-          <p>
-            <a class="btn" href="<?php esc_url(home_url('/')); ?>handlare">Hitta handlare <i class="fa fa-arrow-circle-o-right"> </i></a>
-            <a class="btn" href="<?php esc_url(home_url('/')); ?>arrangemang">Se arrangemang <i class="fa fa-arrow-circle-o-right"> </i></a>
-          </p>
+            <p class="btn-group btn-group-lg" role="group" aria-label="...">
+              <button type="button" class="btn btn-primary">
+                <a href="<?php esc_url(home_url('/')); ?>handlare">
+                  <i class="fa fa-arrow-circle-o-right">&nbsp;</i>
+                  Hitta handlare
+                </a>
+              </button>
+              <button type="button" class="btn btn-primary">
+                <a href="<?php esc_url(home_url('/')); ?>arrangemang">
+                  <i class="fa fa-calendar"> </i>
+                  Vad händer just nu?
+                </a>
+              </button>
+            </p>
+
+          </article>
+
+      </div>
+    </section>
+  <?php endif; ?>
+
+    <section class="feature feature--about">
+      <div class="container">
+
+        <article class="col-xs-12 col-sm-offset-1 col-sm-10 post--content">
+          <h2>Välkummin jåt</h2>
+          <?php the_content(); ?>
         </article>
 
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section class="feature feature--feed--down feature--news">
+      <div class="container">
 
-  <section class="feature feature--feed--down feature--about">
-    <div class="container">
+        <article class="col-xs-12 col-sm-6">
 
-      <article class="col--palm--12 col--portable--offset--1 col--portable--5 content--box">
-        <h2>Välkummin jåt</h2>
-        <?php
-        while ( have_posts() ) : the_post();
+          <div class="widget">
 
-          the_content();
+            <div class="widget--title">
+              <h4>Aktuellt just nu!</h4>
+            </div>
 
-        endwhile;
-        ?>
-      </article>
+            <div class="widget--body">
+              <ul class="nav nav-pills nav-stacked">
+              <?php
+              	$args = array( 'numberposts' => '10' );
+              	$recent_posts = wp_get_recent_posts( $args );
+              	foreach( $recent_posts as $recent ){
+              		echo '<li class="nav-item">';
+                    echo '<a class="nav-link" href="' . get_permalink($recent["ID"]) . '">' . $recent["post_title"] . '</a>';
+                  echo '</li> ';
+              	}
+              ?>
+              </ul>
+            </div>
 
-      <article class="col--palm--12 col--portable--5 news--box">
+          </div>
 
-      </article>
+        </article>
 
-    </div>
-  </section>
+        <article class="hidden-xs-down col-sm-6">
 
-</main>
+          <div class="widget facebook--widget">
 
-<?php get_template_part( 'templates/site', 'footer' ); ?>
+            <div class="widget--title">
+              <h4>Facebook</h4>
+            </div>
+
+            <div class="widget--body">
+              <div class="fb-page"
+              data-href="https://www.facebook.com/malungshandlarna"
+              data-small-header="true"
+              data-adapt-container-width="true"
+              data-hide-cover="true"
+              data-show-facepile="true"
+              data-show-posts="true">
+                <div class="fb-xfbml-parse-ignore">
+                  <blockquote cite="https://www.facebook.com/malungshandlarna">
+                    <a href="https://www.facebook.com/malungshandlarna">
+                      MalungsHandlarna
+                    </a>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+<?php endwhile; ?>
+
+<?php get_footer(); ?>

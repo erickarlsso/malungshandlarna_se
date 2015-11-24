@@ -1,0 +1,30 @@
+.aside--wrap {
+  position: relative;
+
+  .widget {
+    padding-bottom: $grid-gutter-width / 4;
+  }
+
+  ul.nav {
+    margin: ($grid-gutter-width / 2) 0;
+    padding: 0 0 ($grid-gutter-width / 2);
+
+    li {
+      padding: 0 1.5rem;
+      line-height: 3rem;
+    }
+
+    a {
+      display: block;
+      color: $gray-dark;
+      border-bottom: .1rem dotted rgba($gray-dark, .5);
+    }
+
+    li.current_page_item > a,
+    a:focus,
+    a:hover {
+      color: $color-1-dark;
+      border-bottom: .1rem dotted rgba($color-1-dark, .75);
+    }
+  }
+}

@@ -1,20 +1,20 @@
-<main class="main--wrapper">
-  <div class="container main--content">
+<main class="main--wrap">
+  <div class="container">
 
-      <div class="group">
+      <div class="row">
 
-        <figure class="col--palm--12 col--portable--12 store--cover">
+        <figure class="col-xs-12 post--image">
           <?php the_post_thumbnail( 'gallerycover' ); ?>
         </figure>
 
       </div>
 
-      <div class="group">
+      <div class="row">
 
-        <article class="col--palm--12 col--portable--12 store--info">
+        <article class="col-xs-12 store--info">
           <?php the_title('<h1>', '</h1>'); ?>
           <ul class="nav">
-            <li class="col--palm-12 hide--portable">
+            <li class="hidden-sm-up col-xs-12">
               <h5>
                 <i class="fa fa-facebook"> </i>
                 Facebook
@@ -23,7 +23,7 @@
                 <a href="<?php the_field('facebook'); ?>" target="_blank">Klicka här</a>
               </p>
             </li>
-            <li class="col--palm-12 col--portable--3">
+            <li class="col-xs-12 col-sm-3">
               <?php if ( get_field('website') ) : ?>
               <h5>
                 <i class="fa fa-external-link"> </i>
@@ -34,7 +34,7 @@
               </p>
               <?php endif; ?>
             </li>
-            <li class="col--palm-12 col--portable--3">
+            <li class="col-xs-12 col-sm-3">
               <h5>
                 <i class="fa fa-map-marker"> </i>
                 Besöksadress
@@ -43,7 +43,7 @@
                 <a href="#"><?php the_field('address'); ?></a>
               </p>
             </li>
-            <li class="col--palm-12 col--portable--3">
+            <li class="col-xs-12 col-sm-3">
               <h5>
                 <i class="fa fa-envelope"> </i>
                 E-post
@@ -52,7 +52,7 @@
                 <a href="mailto:<?php the_field('e-mail'); ?>"><?php the_field('e-mail'); ?></a>
               </p>
             </li>
-            <li class="col--palm-12 col--portable--3">
+            <li class="col-xs-12 col-sm-3">
               <h5>
                 <i class="fa fa-phone"> </i>
                 Telefon
@@ -66,38 +66,46 @@
 
       </div>
 
-      <div class="group">
+      <div class="row with--aside">
 
-        <aside class="col--palm--12 col--portable--4">
+        <aside class="hidden-xs-down col-sm-4 col-lg-3 aside--wrap">
 
-          <div class="group widget widget--map">
-            <?php
-      				$location = get_field('map');
-      				if( !empty($location) ):
-      					echo '<div class="map" style="height:300px;">';
-      						echo '<div class="marker" data-lat="' . $location['lat'] . '" data-lng="' . $location['lng'] . '"></div>';
-      					echo '</div>';
-      				endif;
-      			?>
+          <div class="widget">
+
+            <div class="widget--body widget--map">
+              <?php
+        				$location = get_field('map');
+        				if( !empty($location) ):
+        					echo '<div class="map" style="height:300px;">';
+        						echo '<div class="marker" data-lat="' . $location['lat'] . '" data-lng="' . $location['lng'] . '"></div>';
+        					echo '</div>';
+        				endif;
+        			?>
+            </div>
+
           </div>
 
           <?php
           if ( get_field('facebook') ) : ?>
-          <div class="group widget widget--feed">
-            <div class="fb-page"
-              data-href="<?php the_field('facebook'); ?>"
-              data-small-header="false"
-              data-adapt-container-width="true"
-              data-hide-cover="false"
-              data-width="360"
-              data-show-facepile="true"
-              data-show-posts="true">
-              <div class="fb-xfbml-parse-ignore">
-                <blockquote cite="<?php the_field('facebook'); ?>">
-                  <a href="<?php the_field('facebook'); ?>"><?php the_title(); ?></a>
-                </blockquote>
+          <div class="widget">
+
+            <div class="widget--body widget--feed">
+              <div class="fb-page"
+                data-href="<?php the_field('facebook'); ?>"
+                data-small-header="false"
+                data-adapt-container-width="true"
+                data-hide-cover="false"
+                data-width="360"
+                data-show-facepile="true"
+                data-show-posts="true">
+                <div class="fb-xfbml-parse-ignore">
+                  <blockquote cite="<?php the_field('facebook'); ?>">
+                    <a href="<?php the_field('facebook'); ?>"><?php the_title(); ?></a>
+                  </blockquote>
+                </div>
               </div>
             </div>
+
           </div>
           <?php
           endif;
@@ -105,8 +113,13 @@
 
         </aside>
 
-        <article class="col--palm--12 col--portable--8 store--content">
-          <?php the_content(); ?>
+        <article class="col-xs-12 col-sm-8 col-lg-9 post--content">
+          <?php
+          while (have_posts()) : the_post();
+            the_content();
+          endwhile;
+          ?>
+
         </article>
 
       </div>

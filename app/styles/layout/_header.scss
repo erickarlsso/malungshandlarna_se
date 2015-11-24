@@ -1,0 +1,68 @@
+.header--wrap {
+  padding: 0;
+  height: $header-height;
+  background-color: $color-1;
+
+  .container {
+    position: relative;
+    height: 100%;
+  }
+
+  .navbar--brand {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-left: 1rem;
+    transform: translateY(-50%);
+
+    img {
+      display: block;
+      height: 2.5rem;
+      width: auto;
+    }
+  }
+
+  .navbar--main {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    line-height: $header-height;
+    text-transform: uppercase;
+    font-weight: 800;
+    transform: translateY(-50%);
+
+    li {
+      position: relative;
+      display: inline-block;
+      padding: 0 .5rem;
+    }
+
+    a {
+      color: #fff;
+    }
+
+    li.current-menu-item > a,
+    li.current-page-ancestor > a,
+    li > a:focus,
+    li > a:hover {
+      color: $color-1-dark;
+    }
+  }
+
+  .navbar--toggle {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    color: #fff;
+    user-select: none;
+    transform: translateY(-50%);
+
+    &:active {
+      color: $color-1-dark;
+    }
+
+    i {
+      line-height: $header-height;
+    }
+  }
+}

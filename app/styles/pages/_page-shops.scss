@@ -1,0 +1,148 @@
+.page-template-template-shops .post--filter {
+  margin-bottom: $grid-gutter-width / 2;
+
+  @include media-breakpoint-up(sm) {
+    padding: 0;
+  }
+
+  .collapse--toggle {
+    position: relative;
+    display: block;
+    color: $white;
+    line-height: 4rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    padding: 0 1.5rem;
+    background-color: $color-2-darker;
+
+    i {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  .panel-collapse {
+
+    @include media-breakpoint-up(sm) {
+      display: block !important;
+      height: 100% !important;
+    }
+  }
+
+  .nav--tabs {
+    font-weight: 800;
+    background-color: $color-2-light;
+
+    @include media-breakpoint-up(sm) {
+      text-align: center;
+      background-color: $color-2;
+    }
+
+    li {
+      position: relative;
+      line-height: $header-height / 1.5;
+      border-bottom: .1rem dotted rgba($color-2-darker, .25);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      @include media-breakpoint-up(sm) {
+        display: inline-block;
+        padding: 0;
+        line-height: $header-height;
+      }
+    }
+
+    a {
+      position: relative;
+      display: block;
+      color: $white;
+      padding: 0 1rem;
+      transition: color .25ms ease;
+
+      @include media-breakpoint-up(sm) {
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  .nav--tabs > li > a:focus,
+  .nav--tabs > li > a:hover,
+  .nav--tabs > li > a[aria-selected="true"] {
+    background-color: $color-2-dark;
+
+    @include media-breakpoint-up(sm) {
+      color: $color-2-dark;
+      background-color: transparent;
+    }
+
+  }
+
+  .nav--tabs > li > a[aria-selected="true"] {
+    @include media-breakpoint-up(sm) {
+      &:after {
+        position: absolute;
+      	top: 100%;
+      	left: 50%;
+      	border: solid transparent;
+      	content: " ";
+      	height: 0;
+      	width: 0;
+      	pointer-events: none;
+        border-color: rgba($color-2, 0);
+      	border-top-color: $color-2;
+      	border-width: 1.5rem;
+        z-index: 1;
+      	transform: translateX(-50%);
+      }
+    }
+  }
+
+}
+
+.page-template-template-shops .post--content {
+
+  .tab--panel[aria-hidden='true'] {
+    display: none;
+  }
+
+  .panel--box {
+    position: relative;
+    color: $white;
+
+    figcaption {
+      position: relative;
+      height: 3rem;
+      background-color: $color-2;
+    }
+
+    figcaption > h4 {
+      position: absolute;
+      top: 50%;
+      padding: 0 .5em;
+      margin: 0;
+      font-size: 1rem;
+      transform: translateY(-50%);
+    }
+
+    .btn-group {
+      width: 100%;
+      border-top: .1rem solid rgba($color-2-darker, .25);
+      background-color: $color-2-dark;
+
+      a {
+        color: rgba($white, .75);
+
+        &:focus,
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+
+  }
+
+}
