@@ -19,13 +19,13 @@
 
             <p class="btn-group btn-group-lg" role="group" aria-label="...">
               <button type="button" class="btn btn-primary">
-                <a href="<?php esc_url(home_url('/')); ?>handlare">
+                <a href="<?php echo get_permalink(12); ?>">
                   <i class="fa fa-arrow-circle-o-right">&nbsp;</i>
                   Hitta handlare
                 </a>
               </button>
               <button type="button" class="btn btn-primary">
-                <a href="<?php esc_url(home_url('/')); ?>arrangemang">
+                <a href="<?php echo get_permalink(8); ?>">
                   <i class="fa fa-calendar"> </i>
                   Vad händer just nu?
                 </a>

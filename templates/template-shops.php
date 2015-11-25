@@ -77,7 +77,6 @@
             <div class="row">
 
               <article class="col-xs-12">
-                <?php the_title(); ?>
                 <?php the_content(); ?>
               </article>
 
