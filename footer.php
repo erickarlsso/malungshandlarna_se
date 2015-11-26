@@ -8,7 +8,8 @@
             wp_nav_menu([
               'theme_location'  => 'header_primary',
               'container'       => 'false',
-              'menu_class'      => 'nav'
+              'menu_class'      => 'nav',
+              'depth'           =>  1
             ]);
           endif;
           ?>
@@ -21,7 +22,8 @@
             wp_nav_menu([
               'theme_location'  => 'footer_partners',
               'container'       => 'false',
-              'menu_class'      => 'nav'
+              'menu_class'      => 'nav',
+              'depth'           =>  1
             ]);
           endif;
           ?>
@@ -34,7 +36,8 @@
             wp_nav_menu([
               'theme_location'  => 'footer_other',
               'container'       => 'false',
-              'menu_class'      => 'nav'
+              'menu_class'      => 'nav',
+              'depth'           =>  1
             ]);
           endif;
           ?>

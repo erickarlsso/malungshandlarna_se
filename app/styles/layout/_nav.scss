@@ -32,8 +32,6 @@ body.nav--open {
 
     &.current_page_ancestor,
     &.current_page_item {
-      border-top: .1rem solid rgba($gray-dark, .75);
-      border-bottom: .1rem solid rgba($gray-dark, .75);
       background-color: $color-1;
     }
 

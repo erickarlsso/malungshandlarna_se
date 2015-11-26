@@ -64,6 +64,7 @@
             'theme_location'  => 'header_primary',
             'container'       => 'false',
             'menu_class'      => 'hidden-sm-down nav navbar--main',
+            'depth'           =>  1
           ]);
         endif;
         ?>
