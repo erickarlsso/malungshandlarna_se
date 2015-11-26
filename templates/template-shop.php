@@ -68,7 +68,7 @@
 
       <div class="row with--aside">
 
-        <aside class="hidden-xs-down col-sm-4 col-lg-3 aside--wrap">
+        <aside class="col-xs-12 col-sm-4 col-lg-3 aside--wrap">
 
           <div class="widget">
 

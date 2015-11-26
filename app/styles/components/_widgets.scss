@@ -1,5 +1,6 @@
 .widget {
   margin-bottom: $grid-gutter-width;
+  padding-bottom: $grid-gutter-width / 4;
   background-color: $white;
 
   .widget--title {
@@ -32,6 +33,10 @@
 
     .body--content {
       background-color: $white;
+    }
+
+    .nav > li:last-child {
+      border: none;
     }
   }
 

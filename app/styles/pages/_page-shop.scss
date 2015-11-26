@@ -1,7 +1,19 @@
 body.single-medlemmar > .main--wrap > .container {
-  padding-top: $grid-gutter-width / 2;
   padding-bottom: $grid-gutter-width / 2;
   background-color: #fff;
+
+  .post--image {
+    padding: 0;
+    margin: 0;
+
+    @include media-breakpoint-up(sm) {
+      padding-top: $grid-gutter-width / 2;
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+      margin-bottom: $grid-gutter-width / 2;
+    }
+
+  }
 }
 
 body.single-medlemmar .store--info {

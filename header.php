@@ -83,7 +83,8 @@
           wp_nav_menu([
             'theme_location'  => 'header_primary',
             'container'       => 'false',
-            'menu_class'      => 'nav'
+            'menu_class'      => 'nav',
+            'depth'           =>  2
           ]);
         endif;
         ?>

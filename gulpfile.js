@@ -9,7 +9,7 @@ var pagespeed = require('psi');
 var reload = browserSync.reload;
 
 var AUTOPREFIXER_BROWSERS = [
-  'ie >= 10',
+  'ie >= 8',
   'ie_mob >= 10',
   'ff >= 30',
   'chrome >= 34',
