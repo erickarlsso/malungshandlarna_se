@@ -14,7 +14,7 @@ body.nav--open {
   left: 0;
   width: 75%;
   height: 100%;
-  padding-top: $header-height * 1.5;
+  padding-top: $header-height;
   overflow: hidden;
   z-index: 1;
   background: $color-1-dark;
@@ -26,14 +26,13 @@ body.nav--open {
     padding: 0;
   }
 
+  .row {
+    margin: 1rem 0;
+  }
+
   ul > li {
     padding: 0 1rem;
     line-height: 3em;
-
-    &.current_page_ancestor,
-    &.current_page_item {
-      background-color: $color-1;
-    }
 
     &.current_page_item > a {
       color: $color-1-darker;
@@ -55,10 +54,13 @@ body.nav--open {
   }
 
   ul > li > ul {
-    display: none;
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
+
+    a {
+      font-weight: normal;
+    }
   }
 
   ul > li.current_page_ancestor > ul,

@@ -15,10 +15,22 @@
     margin-left: 1rem;
     transform: translateY(-50%);
 
+    @include media-breakpoint-up(sm) {
+      top: 25%;
+      padding: 0 ($grid-gutter-width) ($grid-gutter-width / 2);
+      background-color: $color-1;
+      border-radius: 0 0 .25rem .25rem;
+      transform: none;
+    }
+
     img {
       display: block;
-      height: 2.5rem;
+      height: 3.5rem;
       width: auto;
+
+      @include media-breakpoint-up(sm) {
+        height: $header-height;
+      }
     }
   }
 

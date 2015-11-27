@@ -42,6 +42,11 @@ function remove_thumbnail_dimensions( $html ) {
   return $html;
 }
 
+// Update the excerpt_more filter
+function new_excerpt_more( $more ) {
+	return ' ... <a class="read--more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Läs mer', 'malungshandlarna' ) . '</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 // Add Actions
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()

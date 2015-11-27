@@ -23,18 +23,20 @@
 
                 <div class="btn-group btn-group-lg" role="group" aria-label="...">
 
-                  <button type="button" class="btn btn-primary">
-                    <a href="<?php echo get_permalink(12); ?>">
+                  <a href="<?php echo get_permalink(12); ?>">
+                    <button type="button" class="btn btn-primary">
                       <i class="fa fa-search">&nbsp;</i>
                       Hitta handlare
-                    </a>
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    <a href="<?php echo get_permalink(8); ?>">
+                    </button>
+                  </a>
+                                    
+                  <a href="<?php echo get_permalink(8); ?>">
+                    <button type="button" class="btn btn-primary">
                       <i class="fa fa-calendar"> </i>
                       Vad händer just nu?
-                    </a>
-                  </button>
+                    </button>
+                  </a>
+
 
                 </div>
 
@@ -78,20 +80,6 @@
 
               <figure class="panel">
 
-                <span><i class="fa fa-car"></i></span>
-                <h3>Parkeringsmöjligheter</h3>
-                <p>
-                  Slipp storstadsmyllret av bilar och problemet att hitta en parkeringsplats, här finns parkering runt knuten!
-                </p>
-
-              </figure>
-
-          </article>
-
-          <article class="col-xs-12 col-sm-4">
-
-              <figure class="panel">
-
                 <span><i class="fa fa-heart"></i></span>
                 <h3>Service med känsla</h3>
                 <p>
@@ -106,10 +94,24 @@
 
               <figure class="panel">
 
-                <span><i class="fa fa-credit-card"></i></span>
-                <h3>rubrik</h3>
+                <span><i class="fa fa-car"></i></span>
+                <h3>Parkering</h3>
                 <p>
-                  text
+                  Slipp storstadsmyllret av bilar och problemet att hitta en parkeringsplats, här finns parkering runt knuten, dessutom gratis!
+                </p>
+
+              </figure>
+
+          </article>
+
+          <article class="col-xs-12 col-sm-4">
+
+              <figure class="panel">
+
+                <span><i class="fa fa-street-view"></i></span>
+                <h3>Närhet</h3>
+                <p>
+                  Här har vi i princip gångavstånd mellan varje butik, vilket gör det väldigt enkelt för dig som kund att hitta allt
                 </p>
 
               </figure>

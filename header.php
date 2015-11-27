@@ -34,6 +34,15 @@
     <meta name="msapplication-wide310x150logo" content="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/images/ico/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/images/ico/mstile-310x310.png" />
 
+    <meta property="og:url" content="<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<?php the_title(); ?> - Malungshandlarna" />
+    <?php
+    if ( has_post_thumbnail() ) :
+      $thumb_id = get_post_thumbnail_id();
+      $thumb_url = wp_get_attachment_image_src($thumb_id,'gallerycover', true);
+      echo '<meta property="og:image" content="' . $thumb_url[0] . '" />';
+    endif; ?>
 
     <?php wp_head(); ?>
   </head>
@@ -55,7 +64,7 @@
       <div class="container">
 
         <a href="<?php echo get_site_url(); ?>" class="navbar--brand">
-          <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/images/huvudlogga-svart_sv.png">
+          <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/images/huvudlogga-svart_sv.svg" alt="<?php bloginfo( 'name' ); ?>">
         </a>
 
         <?php
@@ -79,16 +88,26 @@
     <nav class="hidden-sm-up nav--wrap">
       <div class="container">
 
-        <?php
-        if (has_nav_menu('header_primary')) :
-          wp_nav_menu([
-            'theme_location'  => 'header_primary',
-            'container'       => 'false',
-            'menu_class'      => 'nav',
-            'depth'           =>  2
-          ]);
-        endif;
-        ?>
+        <div class="row">
+
+          <div class="col-xs-10 col-xs-offset-1">
+            <div class="fb-like" data-href="https://facebook.com/malungshandlarna" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <?php
+          if (has_nav_menu('header_primary')) :
+            wp_nav_menu([
+              'theme_location'  => 'header_primary',
+              'container'       => 'false',
+              'menu_class'      => 'nav',
+              'depth'           =>  2
+            ]);
+          endif;
+          ?>
+        </div>
 
       </div>
     </nav>
